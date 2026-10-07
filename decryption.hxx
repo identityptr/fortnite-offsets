@@ -1,5 +1,8 @@
 #pragma once
+
+#include "array.hxx"
 #include "offsets.hxx"
+
 #include <bit>
 #include <cstddef>
 #include <cstdint>
@@ -193,6 +196,33 @@ namespace FN::Decryption
     }
 }
 
+namespace FN::detail
+{
+    inline std::string utf16_to_utf8(const wchar_t* text, const int length)
+    {
+        static_assert(sizeof(wchar_t) == sizeof(std::uint16_t));
+        if (!text || length <= 0)
+            return {};
+
+        const int size = WideCharToMultiByte(
+            CP_UTF8, WC_ERR_INVALID_CHARS, text, length, nullptr, 0, nullptr, nullptr);
+        if (size <= 0)
+            return {};
+
+        std::string result(static_cast<std::size_t>(size), '\0');
+        if (WideCharToMultiByte(CP_UTF8,
+                                WC_ERR_INVALID_CHARS,
+                                text,
+                                length,
+                                result.data(),
+                                size,
+                                nullptr,
+                                nullptr) != size)
+            return {};
+        return result;
+    }
+}
+
 namespace FN
 {
     class FName final
@@ -260,40 +290,6 @@ namespace FN
             return encoded_length(header) == Decryption::fname_length_xor;
         }
 
-        static bool append_utf8(std::string& output, const std::uint32_t codepoint)
-        {
-            if (codepoint <= 0x7FU)
-            {
-                output.push_back(static_cast<char>(codepoint));
-            }
-            else if (codepoint <= 0x7FFU)
-            {
-                output.push_back(static_cast<char>(0xC0U | (codepoint >> 6)));
-                output.push_back(static_cast<char>(0x80U | (codepoint & 0x3FU)));
-            }
-            else if (codepoint <= 0xFFFFU)
-            {
-                if (codepoint >= 0xD800U && codepoint <= 0xDFFFU)
-                    return false;
-                output.push_back(static_cast<char>(0xE0U | (codepoint >> 12)));
-                output.push_back(static_cast<char>(0x80U | ((codepoint >> 6) & 0x3FU)));
-                output.push_back(static_cast<char>(0x80U | (codepoint & 0x3FU)));
-            }
-            else if (codepoint <= 0x10FFFFU)
-            {
-                output.push_back(static_cast<char>(0xF0U | (codepoint >> 18)));
-                output.push_back(static_cast<char>(0x80U | ((codepoint >> 12) & 0x3FU)));
-                output.push_back(static_cast<char>(0x80U | ((codepoint >> 6) & 0x3FU)));
-                output.push_back(static_cast<char>(0x80U | (codepoint & 0x3FU)));
-            }
-            else
-            {
-                return false;
-            }
-
-            return true;
-        }
-
         static std::string decode_text(const std::uintptr_t entry,
                                        const std::uint16_t header)
         {
@@ -314,33 +310,13 @@ namespace FN
             if (!wide)
                 return {reinterpret_cast<const char*>(bytes.data()), bytes.size()};
 
-            std::string result;
-            result.reserve(length);
-
+            std::wstring characters(length, L'\0');
             for (std::size_t index = 0; index < length; ++index)
-            {
-                auto codepoint = static_cast<std::uint32_t>(bytes[index * 2]) |
-                                 (static_cast<std::uint32_t>(bytes[index * 2 + 1]) << 8);
-
-                if (codepoint >= 0xD800U && codepoint <= 0xDBFFU)
-                {
-                    if (++index >= length)
-                        return {};
-
-                    const auto low = static_cast<std::uint32_t>(bytes[index * 2]) |
-                                     (static_cast<std::uint32_t>(bytes[index * 2 + 1]) << 8);
-                    if (low < 0xDC00U || low > 0xDFFFU)
-                        return {};
-
-                    codepoint = 0x10000U + ((codepoint - 0xD800U) << 10) +
-                                (low - 0xDC00U);
-                }
-
-                if (!append_utf8(result, codepoint))
-                    return {};
-            }
-
-            return result;
+                characters[index] = static_cast<wchar_t>(
+                    static_cast<std::uint16_t>(bytes[index * 2]) |
+                    static_cast<std::uint16_t>(bytes[index * 2 + 1] << 8));
+            return detail::utf16_to_utf8(characters.data(),
+                                         static_cast<int>(characters.size()));
         }
 
         static std::string get_name(const std::uint32_t raw_index)
@@ -372,6 +348,89 @@ namespace FN
             if (!result.empty() && suffix != -1)
                 result += "_" + std::to_string(suffix);
             return result;
+        }
+    };
+
+    class FText final
+    {
+      public:
+        std::uintptr_t text_data{};
+
+        FText() = default;
+        explicit FText(const std::uintptr_t data) : text_data(data) {}
+
+        static std::string resolve(const std::uintptr_t address)
+        {
+            if (!Kernel::Object || !Kernel::Object->valid() || !address)
+                return {};
+
+            return from_data(Kernel::Object->Read<std::uintptr_t>(address));
+        }
+
+        static std::string resolve(const std::uintptr_t owner,
+                                   const std::uintptr_t member_offset)
+        {
+            if (!owner || !member_offset || owner > 0x7FFFFFFFFFFFULL - member_offset)
+                return {};
+            return resolve(owner + member_offset);
+        }
+
+        static std::string from_data(const std::uintptr_t data)
+        {
+            if (!Kernel::Object || !Kernel::Object->valid() || !valid_pointer(data))
+                return {};
+
+            for (std::uintptr_t offset = 0; offset <= 0x40; offset += 8)
+            {
+                const auto value = read_string(data + offset);
+                if (!value.empty())
+                    return value;
+            }
+            return {};
+        }
+
+         std::string to_string() const
+        {
+            return from_data(text_data);
+        }
+
+      private:
+        struct string_header
+        {
+            std::uintptr_t data{};
+            std::int32_t count{};
+            std::int32_t capacity{};
+        };
+
+        static_assert(sizeof(string_header) == 0x10);
+
+        static constexpr bool valid_pointer(const std::uintptr_t value)
+        {
+            return value >= 0x10000 && value <= 0x7FFFFFFFFFFFULL;
+        }
+
+        static std::string read_string(const std::uintptr_t address)
+        {
+            const auto header = Kernel::Object->Read<string_header>(address);
+            if (!valid_pointer(header.data) || header.count < 2 || header.count > 1024 ||
+                header.capacity < header.count || header.capacity > 2048)
+                return {};
+
+            std::vector<wchar_t> characters(
+                static_cast<std::size_t>(header.count));
+            if (!Kernel::Object->ReadBytes(
+                    header.data,
+                    characters.size() * sizeof(wchar_t),
+                    reinterpret_cast<std::uint8_t*>(characters.data())) ||
+                characters.back() != 0)
+                return {};
+
+            characters.pop_back();
+            if (characters.empty())
+                return {};
+
+            return detail::utf16_to_utf8(characters.data(),
+                                         static_cast<int>(characters.size()));
         }
     };
 }
