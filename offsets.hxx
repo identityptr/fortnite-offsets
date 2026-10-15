@@ -7,57 +7,59 @@ namespace FN::O
 {
     namespace Engine
     {
-        inline std::uintptr_t UWorld = 0x1B1D12F8;
-        inline std::uintptr_t GEngine = 0x1B1D2C68;
+        inline std::uintptr_t UWorld = 0x1BD9B9E8;
+        inline std::uintptr_t GEngine = 0x1BD9D378;
         inline std::uintptr_t GameViewport = 0xB70;
-        inline std::uintptr_t GNames = 0x1B085580;
-        inline std::uintptr_t FNamePool = 0x1B085580;
-        inline std::uintptr_t GObjects = 0x1B162F78;
-        inline std::uintptr_t GObjectCount = 0x1B162F80;
+        inline std::uintptr_t GNames = 0x1BC4F280;
+        inline std::uintptr_t FNamePool = 0x1BC4F280;
+        inline std::uintptr_t GObjects = 0x1BD2CC40;
+        inline std::uintptr_t GObjectCount = 0x1BD2CC48;
     }
 
     namespace Functions
     {
-        inline std::uintptr_t GetBoneMatrix = 0x44026E;
-        inline std::uintptr_t FNameToString = 0x4FAEE;
-        inline std::uintptr_t StaticFindObject = 0x8655B3;
-        inline std::uintptr_t ProcessEvent = 0xBEC36;
+        inline std::uintptr_t GetBoneMatrix = 0x37022C;
+        inline std::uintptr_t FNameToString = 0x51A82;
+        inline std::uintptr_t StaticFindObject = 0x696F3A;
+        inline std::uintptr_t ProcessEvent = 0x146CCC;
     }
 
     namespace UObject
     {
-        inline std::uintptr_t ObjectFlags = 0x10;
-        inline std::uintptr_t InternalIndex = 0x14;
-        inline std::uintptr_t ClassPrivate = 0x20;
-        inline std::uintptr_t NamePrivate = 0x18;
+        inline std::uintptr_t VTable = 0x0;
+        inline std::uintptr_t ObjectFlags = 0x8;
+        inline std::uintptr_t InternalIndex = 0xC;
+        inline std::uintptr_t ClassPrivate = 0x18;
+        inline std::uintptr_t NamePrivate = 0x20;
+        inline std::uintptr_t OuterPrivate = 0x10;
     }
 
     namespace World
     {
-        inline std::uintptr_t Levels = 0x1E8;
-        inline std::uintptr_t OwningGameInstance = 0x248;
-        inline std::uintptr_t PersistentLevel = 0x38;
-        inline std::uintptr_t GameState = 0x1D0;
-        inline std::uintptr_t Seconds = 0x190;
-        inline std::uintptr_t NetDriver = 0x40;
-        inline std::uintptr_t AuthorityGameMode = 0x1C8;
-        inline std::uintptr_t NetworkManager = 0x60;
-        inline std::uintptr_t PhysicsCollisionHandler = 0x68;
-        inline std::uintptr_t NavigationSystem = 0x1C0;
-        inline std::uintptr_t StreamingLevels = 0xA8;
-        inline std::uintptr_t ParameterCollectionInstances = 0x250;
+        inline std::uintptr_t Levels = 0x1F0;
+        inline std::uintptr_t OwningGameInstance = 0x250;
+        inline std::uintptr_t PersistentLevel = 0x40;
+        inline std::uintptr_t GameState = 0x1D8;
+        inline std::uintptr_t Seconds = 0x198;
+        inline std::uintptr_t NetDriver = 0x48;
+        inline std::uintptr_t AuthorityGameMode = 0x1D0;
+        inline std::uintptr_t NetworkManager = 0x68;
+        inline std::uintptr_t PhysicsCollisionHandler = 0x70;
+        inline std::uintptr_t NavigationSystem = 0x1C8;
+        inline std::uintptr_t StreamingLevels = 0xB0;
+        inline std::uintptr_t ParameterCollectionInstances = 0x258;
     }
 
     namespace Level
     {
-        inline std::uintptr_t Actors = 0x200;
-        inline std::uintptr_t OwningWorld = 0xE0;
-        inline std::uintptr_t Model = 0xE8;
-        inline std::uintptr_t ModelComponents = 0xF0;
-        inline std::uintptr_t LevelScriptActor = 0x110;
-        inline std::uintptr_t WorldSettings = 0x2B8;
-        inline std::uintptr_t NavListStart = 0x118;
-        inline std::uintptr_t NavListEnd = 0x120;
+        inline std::uintptr_t Actors = 0x50;
+        inline std::uintptr_t OwningWorld = 0x78;
+        inline std::uintptr_t Model = 0x80;
+        inline std::uintptr_t ModelComponents = 0x88;
+        inline std::uintptr_t LevelScriptActor = 0xA8;
+        inline std::uintptr_t WorldSettings = 0x2C8;
+        inline std::uintptr_t NavListStart = 0xB0;
+        inline std::uintptr_t NavListEnd = 0xB8;
     }
 
     namespace GameInstance
@@ -75,26 +77,42 @@ namespace FN::O
     {
         inline std::uintptr_t PlayerController = 0x30;
         inline std::uintptr_t ViewportClient = 0x78;
-        inline std::uintptr_t ViewState = 0x250;
     }
 
     namespace PlayerController
     {
         inline std::uintptr_t PlayerCameraManager = 0x328;
         inline std::uintptr_t AcknowledgedPawn = 0x318;
+        inline std::uintptr_t NetConnection = 0x4A8;
+        inline std::uintptr_t CheatManager = 0x3D8;
         inline std::uintptr_t HUD = 0x320;
         inline std::uintptr_t Player = 0x310;
+        inline std::uintptr_t InputYawScale = 0x4C8;
+        inline std::uintptr_t InputPitchScale = 0x4CC;
+        inline std::uintptr_t InputRollScale = 0x4D0;
+        inline std::uintptr_t SpectatorPawn = 0x640;
+        inline std::uintptr_t bShowMouseCursor = 0x4D4;
+        inline std::uintptr_t CameraFOVScale = 0x374;
     }
 
     namespace FortPlayerController
     {
+        inline std::uintptr_t TargetedFortPawn = 0x16D0;
+        inline std::uintptr_t PlayerAimOffset = 0x2340;
+        inline std::uintptr_t WeaponOffsetCorrection = 0x2370;
+        inline std::uintptr_t AdditionalAimOffset = 0x2310;
+        inline std::uintptr_t InteractionComponent = 0x27D0;
+        inline std::uintptr_t WeaponRecoilOffset = 0x2358;
+        inline std::uintptr_t LocationUnderReticle = 0x21B0;
     }
 
     namespace PlayerState
     {
         inline std::uintptr_t PawnPrivate = 0x2E8;
         inline std::uintptr_t PlayerName = 0x308;
+        inline std::uintptr_t PlayerNamePrivate = 0x308;
         inline std::uintptr_t bIsABot = 0x27A;
+        inline std::uint8_t bIsABotMask = 0x8;
     }
 
     namespace Pawn
@@ -143,6 +161,7 @@ namespace FN::O
 
     namespace PrimitiveComponent
     {
+        inline std::uintptr_t LastRenderTime = 0x2E0;
     }
 
     namespace SceneComponent
@@ -150,6 +169,7 @@ namespace FN::O
         inline std::uintptr_t RelativeLocation = 0x140;
         inline std::uintptr_t ComponentVelocity = 0x188;
         inline std::uintptr_t ComponentToWorld = 0x1E0;
+        inline std::uintptr_t bComponentToWorldUpdated = 0x1A0;
         inline std::uintptr_t Parent = 0xD0;
         inline std::uintptr_t AttachParent = 0xD0;
         inline std::uintptr_t AttachSocketName = 0xD8;
@@ -168,17 +188,20 @@ namespace FN::O
         inline std::uintptr_t BoneArray = 0x660;
         inline std::uintptr_t BoneCache = 0x670;
         inline std::uintptr_t CurrentReadComponentTransforms = 0x6C8;
-        inline std::uintptr_t CachedComponentSpaceTransforms = 0x9D0;
-        inline std::uintptr_t GlobalAnimRateScale = 0x9F0;
+        inline std::uintptr_t CachedComponentSpaceTransforms = 0xA10;
+        inline std::uintptr_t GlobalAnimRateScale = 0xA88;
     }
 
     namespace FortPlayerState
     {
+        inline std::uintptr_t HabaneroComponent = 0x918;
+        inline std::uintptr_t Platform = 0x400;
     }
 
     namespace FortPlayerStateAthena
     {
         inline std::uintptr_t TeamIndex = 0xF69;
+        inline std::uintptr_t RebootCount = 0x1604;
         inline std::uintptr_t KillScore = 0xF80;
         inline std::uintptr_t SeasonLevelUIDisplay = 0xF84;
     }
@@ -193,24 +216,27 @@ namespace FN::O
         inline std::uintptr_t bIsDying = 0x728;
         inline std::uintptr_t bIsDBNO = 0x881;
         inline std::uintptr_t CurrentWeapon = 0x9D0;
-        inline std::uintptr_t LastDamagedTime = 0xDE8;
+        inline std::uintptr_t LastDamagedTime = 0xE18;
         inline std::uintptr_t CurrentWeaponList = 0xA08;
-        inline std::uintptr_t HealthSet = 0x13A8;
+        inline std::uintptr_t HealthSet = 0x13D8;
     }
 
     namespace FortPlayerPawnAthena
     {
-        inline std::uintptr_t CurrentVehicle = 0x2C30;
-        inline std::uintptr_t bIsParachuteOpen = 0x2290;
-        inline std::uintptr_t bIsSkydiving = 0x228F;
+        inline std::uintptr_t CurrentVehicle = 0x2C60;
+        inline std::uintptr_t bIsParachuteOpen = 0x22C0;
+        inline std::uintptr_t bIsSkydiving = 0x22BF;
         inline std::uintptr_t bIsSliding = 0x758;
-        inline std::uintptr_t ReviveFromDBNOTime = 0x4B38;
-        inline std::uintptr_t bADSWhileNotOnGround = 0x5541;
-        inline std::uintptr_t bHasStartedFloating = 0x28D4;
+        inline std::uintptr_t ReviveFromDBNOTime = 0x4BB8;
+        inline std::uintptr_t bADSWhileNotOnGround = 0x55C1;
+        inline std::uintptr_t bHasStartedFloating = 0x2904;
     }
 
     namespace PlayerCameraManager
     {
+        inline std::uintptr_t CameraLocation = 0x15A0;
+        inline std::uintptr_t CameraRotation = 0x15B8;
+        inline std::uintptr_t CameraFOV = 0x15D0;
         inline std::uintptr_t PendingViewTarget = 0xC30;
         inline std::uintptr_t LastFrameCameraCachePrivate = 0x1EB0;
         inline std::uintptr_t DefaultFOV = 0x284;
@@ -220,35 +246,74 @@ namespace FN::O
         inline std::uintptr_t bDefaultConstrainAspectRatio = 0x28A8;
     }
 
+    namespace FCameraCacheEntry
+    {
+        inline std::uintptr_t POV = 0x10;
+    }
+
+    namespace FMinimalViewInfo
+    {
+        inline std::uintptr_t Location = 0x0;
+        inline std::uintptr_t Rotation = 0x18;
+        inline std::uintptr_t FOV = 0x30;
+    }
+
     namespace FortWeapon
     {
-        inline std::uintptr_t WeaponData = 0x6D0;
-        inline std::uintptr_t AmmoCount = 0x17D8;
+        inline std::uintptr_t WeaponData = 0x610;
+        inline std::uintptr_t AmmoCount = 0x10D8;
         inline std::uintptr_t bIsReloadingWeapon = 0x379;
+        inline std::uintptr_t LastFireTime = 0xFDC;
+        inline std::uintptr_t LastFireTimeVerified = 0xFE4;
         inline std::uintptr_t bIsChargingWeapon = 0x378;
+        inline std::uintptr_t WeaponLevel = 0x1098;
+        inline std::uintptr_t LastFireAbilityTime = 0x157C;
+        inline std::uintptr_t CurrentReloadDuration = 0x1070;
+        inline std::uintptr_t bIsReloading = 0x379;
+        inline std::uintptr_t CurrentCharge = 0x10F8;
+        inline std::uintptr_t ChargeTime = 0x10F4;
     }
 
     namespace FortControllerComponent_Interaction
     {
+        inline std::uintptr_t StartInteractTime = 0x280;
     }
 
     namespace FortAthenaVehicle
     {
+        inline std::uintptr_t bUseGravity = 0x85F;
+        inline std::uintptr_t LifespanAfterDeath = 0x10A8;
+        inline std::uintptr_t VehicleAttributes = 0x12D8;
+    }
+
+    namespace FortHoagieVehicle
+    {
+        inline std::uintptr_t ServerCriticalHealth = 0x1BFC;
     }
 
     namespace FortItemDefinition
     {
         inline std::uintptr_t ItemName = 0x38;
+        inline std::uintptr_t RarityStruct = 0x1908F580;
         inline std::uintptr_t ItemType = 0x98;
         inline std::uintptr_t PrimaryAssetIdItemTypeOverride = 0x99;
+        inline std::uintptr_t DisplayName = 0x38;
     }
 
     namespace BuildingContainer
     {
+        inline std::uintptr_t bAlreadySearched = 0xCE2;
+        inline std::uintptr_t SearchedFlags = 0xCE2; // shared bitfield byte
+        inline std::uintptr_t SpawnSourceOverride = 0xB78;
+        inline std::uintptr_t SearchText = 0xD38;
+        inline std::uintptr_t ChosenRandomUpgrade = 0xBC4;
     }
 
     namespace FortPickup
     {
+        inline std::uintptr_t PrimaryPickupItemEntry = 0x368;
+        inline std::uintptr_t SimulatingTooLongLength = 0x290;
+        inline std::uintptr_t PickupLocationData = 0x410;
         inline std::uintptr_t bPickedUp = 0x28C;
         inline std::uintptr_t PickupFlags = 0x28C; // shared bitfield byte
         inline std::uintptr_t PickupExtendedFlags = 0x28D; // shared bitfield byte
@@ -256,10 +321,13 @@ namespace FN::O
 
     namespace FortItemEntry
     {
+        inline std::uintptr_t ItemDefinition = 0x10;
     }
 
     namespace FortWeaponItemDefinition
     {
+        inline std::uintptr_t DisplayTier = 0x296;
+        inline std::uintptr_t Rarity = 0x296;
     }
 
     namespace Controller
@@ -267,9 +335,8 @@ namespace FN::O
         inline std::uintptr_t ControlRotation = 0x2E8;
     }
 
-    namespace FString
+    namespace FortPickupLocationData
     {
-        inline std::uintptr_t FData = 0x0; //rahhhh
-        inline std::uintptr_t FLength = 0x8;
+        inline std::uintptr_t TossState = 0xC0;
     }
 }
