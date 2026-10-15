@@ -1,0 +1,1041 @@
+/**
+ * decamp dumper generated SDK
+ * Package: /Script/BarnTowelRuntime
+ */
+#pragma once
+#include "Basic.h"
+
+// /Script/BarnTowelRuntime.BarnTowelFlyingStatusConfig
+// Kind: ScriptStruct; super: JetpackFlyingStatusConfig
+struct FBarnTowelFlyingStatusConfig
+{
+public:
+    std::uint8_t Status; // 0x0000 (Size: 0x1, Type: EnumProperty)
+    std::uint8_t Pad_0000[0x3]; // 0x0001
+    std::uint8_t CooldownTag[0x4]; // 0x0004 (Size: 0x4, Type: StructProperty)
+    std::uint8_t CooldownDuration[0x1]; // 0x0008 (Size: 0x1, Type: StructProperty)
+};
+
+static_assert(offsetof(FBarnTowelFlyingStatusConfig, Status) == 0, "Offset mismatch for FBarnTowelFlyingStatusConfig::Status");
+static_assert(offsetof(FBarnTowelFlyingStatusConfig, CooldownTag) == 4, "Offset mismatch for FBarnTowelFlyingStatusConfig::CooldownTag");
+static_assert(offsetof(FBarnTowelFlyingStatusConfig, CooldownDuration) == 8, "Offset mismatch for FBarnTowelFlyingStatusConfig::CooldownDuration");
+
+// /Script/BarnTowelRuntime.AFortGameplayCueNotifyLoop_BarnTowel
+// Kind: Class; super: AFortGameplayCueNotifyLoop_Jetpack
+class UAFortGameplayCueNotifyLoop_BarnTowel
+{
+public:
+    std::uint8_t Pad_0000[0xC48]; // 0x0000
+    std::uint8_t IsAscendingParamName[0x4]; // 0x0C48 (Size: 0x4, Type: NameProperty)
+    std::uint8_t IsFlappingParamName[0x4]; // 0x0C4C (Size: 0x4, Type: NameProperty)
+    std::uint8_t FlappingAlphaParamName[0x4]; // 0x0C50 (Size: 0x4, Type: NameProperty)
+    std::uint8_t IsRollingParamName[0x4]; // 0x0C54 (Size: 0x4, Type: NameProperty)
+    std::uint8_t IsBoostingParamName[0x4]; // 0x0C58 (Size: 0x4, Type: NameProperty)
+    std::uint8_t IsDivingParamName[0x4]; // 0x0C5C (Size: 0x4, Type: NameProperty)
+    std::uint8_t PitchParamName[0x4]; // 0x0C60 (Size: 0x4, Type: NameProperty)
+    std::uint8_t RollParamName[0x4]; // 0x0C64 (Size: 0x4, Type: NameProperty)
+    std::uint8_t SpeedParamName[0x4]; // 0x0C68 (Size: 0x4, Type: NameProperty)
+    std::uint8_t AltitudeInterpParamName[0x4]; // 0x0C6C (Size: 0x4, Type: NameProperty)
+    std::uint8_t HeightRange[0x1]; // 0x0C70 (Size: 0x1, Type: StructProperty)
+};
+
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, IsAscendingParamName) == 3144, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::IsAscendingParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, IsFlappingParamName) == 3148, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::IsFlappingParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, FlappingAlphaParamName) == 3152, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::FlappingAlphaParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, IsRollingParamName) == 3156, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::IsRollingParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, IsBoostingParamName) == 3160, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::IsBoostingParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, IsDivingParamName) == 3164, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::IsDivingParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, PitchParamName) == 3168, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::PitchParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, RollParamName) == 3172, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::RollParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, SpeedParamName) == 3176, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::SpeedParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, AltitudeInterpParamName) == 3180, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::AltitudeInterpParamName");
+static_assert(offsetof(UAFortGameplayCueNotifyLoop_BarnTowel, HeightRange) == 3184, "Offset mismatch for UAFortGameplayCueNotifyLoop_BarnTowel::HeightRange");
+
+// /Script/BarnTowelRuntime.BarnTowelLayerAnimInstance
+// Kind: Class; super: JetpackLayerAnimInstance
+class UBarnTowelLayerAnimInstance
+{
+public:
+    std::uint8_t Pad_0000[0x1170]; // 0x0000
+    std::uint8_t bIsFlying; // 0x1170 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0001[0x7]; // 0x1171
+    double FlyingPitch; // 0x1178 (Size: 0x8, Type: DoubleProperty)
+    double FlyingRoll; // 0x1180 (Size: 0x8, Type: DoubleProperty)
+    std::uint8_t bNoFuel; // 0x1188 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIsHovering; // 0x1189 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0002[0x2]; // 0x118A
+    float YawOffset; // 0x118C (Size: 0x4, Type: FloatProperty)
+    float AimingPitch; // 0x1190 (Size: 0x4, Type: FloatProperty)
+    std::uint8_t Pad_0003[0x4]; // 0x1194
+    double LateralSpeedInterp; // 0x1198 (Size: 0x8, Type: DoubleProperty)
+    double ForwardSpeedInterp; // 0x11A0 (Size: 0x8, Type: DoubleProperty)
+    double LateralSpeedDif; // 0x11A8 (Size: 0x8, Type: DoubleProperty)
+    std::uint8_t bDodgeRight; // 0x11B0 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bDodgeLeft; // 0x11B1 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0004[0x6]; // 0x11B2
+    double ForwardSpeedDif; // 0x11B8 (Size: 0x8, Type: DoubleProperty)
+    std::uint8_t bWindingUpThrust; // 0x11C0 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bThrusting; // 0x11C1 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bLowFrictionLand; // 0x11C2 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0005[0x1]; // 0x11C3
+    float RotationState; // 0x11C4 (Size: 0x4, Type: FloatProperty)
+    std::uint8_t bIsAccelerating; // 0x11C8 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0006[0x7]; // 0x11C9
+    double ForAnimMovementInputX; // 0x11D0 (Size: 0x8, Type: DoubleProperty)
+    double ForAnimMovementInputY; // 0x11D8 (Size: 0x8, Type: DoubleProperty)
+    std::uint8_t bInForceFall; // 0x11E0 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0007[0x7]; // 0x11E1
+    std::uint8_t LastFrameVelocity[0x18]; // 0x11E8 (Size: 0x18, Type: StructProperty)
+    std::uint8_t bForAnimIsInInitialHover; // 0x1200 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bDodgeLeftInto1; // 0x1201 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bDodgeLeftInto2; // 0x1202 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bDodgeRightInto1; // 0x1203 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bDodgeRightInto2; // 0x1204 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bCanEnterSlam; // 0x1205 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bExitSoftLand; // 0x1206 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0008[0x1]; // 0x1207
+    float FalseBlendTime; // 0x1208 (Size: 0x4, Type: FloatProperty)
+    std::uint8_t Pad_0009[0x4]; // 0x120C
+    double LaterSpeedDiffMulti; // 0x1210 (Size: 0x8, Type: DoubleProperty)
+    float Cur_BlendIn; // 0x1218 (Size: 0x4, Type: FloatProperty)
+    float Cur_foot_r; // 0x121C (Size: 0x4, Type: FloatProperty)
+    float Cur_foot_l; // 0x1220 (Size: 0x4, Type: FloatProperty)
+    float Cur_BlendOut; // 0x1224 (Size: 0x4, Type: FloatProperty)
+    double ExitBoostLeftRight; // 0x1228 (Size: 0x8, Type: DoubleProperty)
+    std::uint8_t bFP_IntoFlightToIntoFlightLoop; // 0x1230 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_IntoFlightToIntoFlightToHover; // 0x1231 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_ConduitToFlightLoop; // 0x1232 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_ExitFlight; // 0x1233 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_NotHovering; // 0x1234 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_DodgeReturnToConduit; // 0x1235 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_EnterFlightLoopToConduit; // 0x1236 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_ExitFlightToConduit; // 0x1237 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_ExitFlightToConduit2; // 0x1238 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_ExitFlightToEnterFlightLoop; // 0x1239 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bFP_SlamIntroToConduit; // 0x123A (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_000A[0x5]; // 0x123B
+    double FP_StrafeLR_Hover_SpeedBS; // 0x1240 (Size: 0x8, Type: DoubleProperty)
+    double FP_Speed_Hover_SpeedBS; // 0x1248 (Size: 0x8, Type: DoubleProperty)
+    double FP_StrafeLR_Hover_Pitch_Roll_BS; // 0x1250 (Size: 0x8, Type: DoubleProperty)
+    double FP_Speed_Hover_Pitch_Roll_BS; // 0x1258 (Size: 0x8, Type: DoubleProperty)
+    double ZSpeedDiff; // 0x1260 (Size: 0x8, Type: DoubleProperty)
+    double FPZSpeed; // 0x1268 (Size: 0x8, Type: DoubleProperty)
+    float GlideRollCombined; // 0x1270 (Size: 0x4, Type: FloatProperty)
+    float GlidePitchAlpha; // 0x1274 (Size: 0x4, Type: FloatProperty)
+    float RollAlpha; // 0x1278 (Size: 0x4, Type: FloatProperty)
+    std::uint8_t bIsAscending; // 0x127C (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIsCrashing; // 0x127D (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_000B[0x2]; // 0x127E
+    std::uint8_t FlyingTagName[0x4]; // 0x1280 (Size: 0x4, Type: StructProperty)
+    std::uint8_t OutOfFuelTagName[0x4]; // 0x1284 (Size: 0x4, Type: StructProperty)
+    std::uint8_t LowFrictionLandingTagName[0x4]; // 0x1288 (Size: 0x4, Type: StructProperty)
+    std::uint8_t DamageTagName[0x4]; // 0x128C (Size: 0x4, Type: StructProperty)
+    std::uint8_t SmashingThingsTagName[0x1]; // 0x1290 (Size: 0x1, Type: StructProperty)
+};
+
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bIsFlying) == 4464, "Offset mismatch for UBarnTowelLayerAnimInstance::bIsFlying");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FlyingPitch) == 4472, "Offset mismatch for UBarnTowelLayerAnimInstance::FlyingPitch");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FlyingRoll) == 4480, "Offset mismatch for UBarnTowelLayerAnimInstance::FlyingRoll");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bNoFuel) == 4488, "Offset mismatch for UBarnTowelLayerAnimInstance::bNoFuel");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bIsHovering) == 4489, "Offset mismatch for UBarnTowelLayerAnimInstance::bIsHovering");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, YawOffset) == 4492, "Offset mismatch for UBarnTowelLayerAnimInstance::YawOffset");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, AimingPitch) == 4496, "Offset mismatch for UBarnTowelLayerAnimInstance::AimingPitch");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, LateralSpeedInterp) == 4504, "Offset mismatch for UBarnTowelLayerAnimInstance::LateralSpeedInterp");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, ForwardSpeedInterp) == 4512, "Offset mismatch for UBarnTowelLayerAnimInstance::ForwardSpeedInterp");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, LateralSpeedDif) == 4520, "Offset mismatch for UBarnTowelLayerAnimInstance::LateralSpeedDif");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bDodgeRight) == 4528, "Offset mismatch for UBarnTowelLayerAnimInstance::bDodgeRight");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bDodgeLeft) == 4529, "Offset mismatch for UBarnTowelLayerAnimInstance::bDodgeLeft");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, ForwardSpeedDif) == 4536, "Offset mismatch for UBarnTowelLayerAnimInstance::ForwardSpeedDif");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bWindingUpThrust) == 4544, "Offset mismatch for UBarnTowelLayerAnimInstance::bWindingUpThrust");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bThrusting) == 4545, "Offset mismatch for UBarnTowelLayerAnimInstance::bThrusting");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bLowFrictionLand) == 4546, "Offset mismatch for UBarnTowelLayerAnimInstance::bLowFrictionLand");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, RotationState) == 4548, "Offset mismatch for UBarnTowelLayerAnimInstance::RotationState");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bIsAccelerating) == 4552, "Offset mismatch for UBarnTowelLayerAnimInstance::bIsAccelerating");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, ForAnimMovementInputX) == 4560, "Offset mismatch for UBarnTowelLayerAnimInstance::ForAnimMovementInputX");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, ForAnimMovementInputY) == 4568, "Offset mismatch for UBarnTowelLayerAnimInstance::ForAnimMovementInputY");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bInForceFall) == 4576, "Offset mismatch for UBarnTowelLayerAnimInstance::bInForceFall");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, LastFrameVelocity) == 4584, "Offset mismatch for UBarnTowelLayerAnimInstance::LastFrameVelocity");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bForAnimIsInInitialHover) == 4608, "Offset mismatch for UBarnTowelLayerAnimInstance::bForAnimIsInInitialHover");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bDodgeLeftInto1) == 4609, "Offset mismatch for UBarnTowelLayerAnimInstance::bDodgeLeftInto1");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bDodgeLeftInto2) == 4610, "Offset mismatch for UBarnTowelLayerAnimInstance::bDodgeLeftInto2");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bDodgeRightInto1) == 4611, "Offset mismatch for UBarnTowelLayerAnimInstance::bDodgeRightInto1");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bDodgeRightInto2) == 4612, "Offset mismatch for UBarnTowelLayerAnimInstance::bDodgeRightInto2");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bCanEnterSlam) == 4613, "Offset mismatch for UBarnTowelLayerAnimInstance::bCanEnterSlam");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bExitSoftLand) == 4614, "Offset mismatch for UBarnTowelLayerAnimInstance::bExitSoftLand");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FalseBlendTime) == 4616, "Offset mismatch for UBarnTowelLayerAnimInstance::FalseBlendTime");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, LaterSpeedDiffMulti) == 4624, "Offset mismatch for UBarnTowelLayerAnimInstance::LaterSpeedDiffMulti");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, Cur_BlendIn) == 4632, "Offset mismatch for UBarnTowelLayerAnimInstance::Cur_BlendIn");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, Cur_foot_r) == 4636, "Offset mismatch for UBarnTowelLayerAnimInstance::Cur_foot_r");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, Cur_foot_l) == 4640, "Offset mismatch for UBarnTowelLayerAnimInstance::Cur_foot_l");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, Cur_BlendOut) == 4644, "Offset mismatch for UBarnTowelLayerAnimInstance::Cur_BlendOut");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, ExitBoostLeftRight) == 4648, "Offset mismatch for UBarnTowelLayerAnimInstance::ExitBoostLeftRight");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_IntoFlightToIntoFlightLoop) == 4656, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_IntoFlightToIntoFlightLoop");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_IntoFlightToIntoFlightToHover) == 4657, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_IntoFlightToIntoFlightToHover");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_ConduitToFlightLoop) == 4658, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_ConduitToFlightLoop");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_ExitFlight) == 4659, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_ExitFlight");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_NotHovering) == 4660, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_NotHovering");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_DodgeReturnToConduit) == 4661, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_DodgeReturnToConduit");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_EnterFlightLoopToConduit) == 4662, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_EnterFlightLoopToConduit");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_ExitFlightToConduit) == 4663, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_ExitFlightToConduit");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_ExitFlightToConduit2) == 4664, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_ExitFlightToConduit2");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_ExitFlightToEnterFlightLoop) == 4665, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_ExitFlightToEnterFlightLoop");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bFP_SlamIntroToConduit) == 4666, "Offset mismatch for UBarnTowelLayerAnimInstance::bFP_SlamIntroToConduit");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FP_StrafeLR_Hover_SpeedBS) == 4672, "Offset mismatch for UBarnTowelLayerAnimInstance::FP_StrafeLR_Hover_SpeedBS");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FP_Speed_Hover_SpeedBS) == 4680, "Offset mismatch for UBarnTowelLayerAnimInstance::FP_Speed_Hover_SpeedBS");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FP_StrafeLR_Hover_Pitch_Roll_BS) == 4688, "Offset mismatch for UBarnTowelLayerAnimInstance::FP_StrafeLR_Hover_Pitch_Roll_BS");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FP_Speed_Hover_Pitch_Roll_BS) == 4696, "Offset mismatch for UBarnTowelLayerAnimInstance::FP_Speed_Hover_Pitch_Roll_BS");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, ZSpeedDiff) == 4704, "Offset mismatch for UBarnTowelLayerAnimInstance::ZSpeedDiff");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FPZSpeed) == 4712, "Offset mismatch for UBarnTowelLayerAnimInstance::FPZSpeed");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, GlideRollCombined) == 4720, "Offset mismatch for UBarnTowelLayerAnimInstance::GlideRollCombined");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, GlidePitchAlpha) == 4724, "Offset mismatch for UBarnTowelLayerAnimInstance::GlidePitchAlpha");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, RollAlpha) == 4728, "Offset mismatch for UBarnTowelLayerAnimInstance::RollAlpha");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bIsAscending) == 4732, "Offset mismatch for UBarnTowelLayerAnimInstance::bIsAscending");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, bIsCrashing) == 4733, "Offset mismatch for UBarnTowelLayerAnimInstance::bIsCrashing");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, FlyingTagName) == 4736, "Offset mismatch for UBarnTowelLayerAnimInstance::FlyingTagName");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, OutOfFuelTagName) == 4740, "Offset mismatch for UBarnTowelLayerAnimInstance::OutOfFuelTagName");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, LowFrictionLandingTagName) == 4744, "Offset mismatch for UBarnTowelLayerAnimInstance::LowFrictionLandingTagName");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, DamageTagName) == 4748, "Offset mismatch for UBarnTowelLayerAnimInstance::DamageTagName");
+static_assert(offsetof(UBarnTowelLayerAnimInstance, SmashingThingsTagName) == 4752, "Offset mismatch for UBarnTowelLayerAnimInstance::SmashingThingsTagName");
+
+// /Script/BarnTowelRuntime.FortBarnTowelFlyingBlueprintLibrary
+// Kind: Class; super: FortJetpackFlyingBlueprintLibrary
+class UFortBarnTowelFlyingBlueprintLibrary
+{
+public:
+    std::uint8_t Opaque[1];
+};
+
+
+// /Script/BarnTowelRuntime.FortCameraModifier_BarnTowel
+// Kind: Class; super: FortCameraModifier_Jetpack
+class UFortCameraModifier_BarnTowel
+{
+public:
+    std::uint8_t Pad_0000[0x80]; // 0x0000
+    std::uint8_t NativeWindingUpThrustEventTag[0x4]; // 0x0080 (Size: 0x4, Type: StructProperty)
+    std::uint8_t NativeStartedThrustingEventTag[0x4]; // 0x0084 (Size: 0x4, Type: StructProperty)
+    std::uint8_t NativeQuickThrustEventTag[0x4]; // 0x0088 (Size: 0x4, Type: StructProperty)
+    std::uint8_t NativeHoveringTag[0x4]; // 0x008C (Size: 0x4, Type: StructProperty)
+    std::uint8_t NativeRepulsorCannonTag[0x4]; // 0x0090 (Size: 0x4, Type: StructProperty)
+    std::uint8_t NativeBoostingTag[0x4]; // 0x0094 (Size: 0x4, Type: StructProperty)
+    void* NativeQuickThrustAnchorPercentCurve; // 0x0098 (Size: 0x8, Type: ObjectProperty)
+    void* NativeThrustingAnchorPercentCurve; // 0x00A0 (Size: 0x8, Type: ObjectProperty)
+    void* NativeLeadInForwardPercentCurve; // 0x00A8 (Size: 0x8, Type: ObjectProperty)
+    void* NativeLeadInPercentCurveStraightUp; // 0x00B0 (Size: 0x8, Type: ObjectProperty)
+    void* NativeLeadInUpPercentCurve; // 0x00B8 (Size: 0x8, Type: ObjectProperty)
+    void* NativeThrustingLateralAmountCurve; // 0x00C0 (Size: 0x8, Type: ObjectProperty)
+    void* NativeThurstingForwardAmountCurve; // 0x00C8 (Size: 0x8, Type: ObjectProperty)
+    std::uint8_t NativeScreenShakeOffsetVelocityOldRange[0x10]; // 0x00D0 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeScreenShakeOffsetAccelerationOldRange[0x10]; // 0x00E0 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentForwardVelocityLengthXYOldRange[0x10]; // 0x00F0 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentForwardVelocityLengthXYNewRange[0x10]; // 0x0100 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentForwardUpSpeedABSOldRange[0x10]; // 0x0110 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentForwardUpSpeedABSNewRange[0x10]; // 0x0120 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentRightSpeedOldRange[0x10]; // 0x0130 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentRightSpeedNewRange[0x10]; // 0x0140 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentRightForwardABSOldRange[0x10]; // 0x0150 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentRightForwardABSNewRange[0x10]; // 0x0160 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentUpSpeedOldRange[0x10]; // 0x0170 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentUpSpeedNewRange[0x10]; // 0x0180 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentUpForwardABSOldRange[0x10]; // 0x0190 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentUpForwardABSNewRange[0x10]; // 0x01A0 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentOffsetSpeedOldRange[0x10]; // 0x01B0 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentOffsetSpeedNewRange[0x10]; // 0x01C0 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentOffsetThrustPercentOldRange[0x10]; // 0x01D0 (Size: 0x10, Type: StructProperty)
+    std::uint8_t NativeCurrentOffsetThrustPercentNewRange[0x10]; // 0x01E0 (Size: 0x10, Type: StructProperty)
+    double NativeLeadInTime; // 0x01F0 (Size: 0x8, Type: DoubleProperty)
+    double NativeQuickThrustPullBackTime; // 0x01F8 (Size: 0x8, Type: DoubleProperty)
+    double NativeDivePercentMax; // 0x0200 (Size: 0x8, Type: DoubleProperty)
+    double NativeWindUpHoverTime; // 0x0208 (Size: 0x8, Type: DoubleProperty)
+    double NativeInitialHoverXInputThreshold; // 0x0210 (Size: 0x8, Type: DoubleProperty)
+    double NativeScreenShakeOffsetTimeMultiplier; // 0x0218 (Size: 0x8, Type: DoubleProperty)
+    double NativeScreenShakeOffsetThrustingSinMultiplier; // 0x0220 (Size: 0x8, Type: DoubleProperty)
+    double NativeScreenShakeOffsetNonThrustingSinMultiplier; // 0x0228 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentForwardIsHovering; // 0x0230 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentForwardIsNotHovering; // 0x0238 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentForwardIsBoosting; // 0x0240 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentRightIsHovering; // 0x0248 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentRightIsNotHovering; // 0x0250 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentRightIsBoosting; // 0x0258 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentRightSavedSignIsHovering; // 0x0260 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentRightSavedSignIsNotHovering; // 0x0268 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentUpIsInLeadIn; // 0x0270 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentUpIsNotInLeadIn; // 0x0278 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentUpLowUpSpeed; // 0x0280 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentUpIsHovering; // 0x0288 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentUpIsNotHovering; // 0x0290 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentUpIsBoosting; // 0x0298 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentUpIsNotBoosting; // 0x02A0 (Size: 0x8, Type: DoubleProperty)
+    double NativeCalculatedOffsetInterpSpeedRepulsorCannon; // 0x02A8 (Size: 0x8, Type: DoubleProperty)
+    double NativeCalculatedOffsetInterpSpeedIsHovering; // 0x02B0 (Size: 0x8, Type: DoubleProperty)
+    double NativeCalculatedOffsetInterpSpeedIsNotHovering; // 0x02B8 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVTargetInInitialHover; // 0x02C0 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVInterpSpeedInInitialHover; // 0x02C8 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVTargetNotInInitialHover; // 0x02D0 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVInterpSpeedNotInInitialHover; // 0x02D8 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVTargetRepulsorCannon; // 0x02E0 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVInterpSpeedRepulsorCannon; // 0x02E8 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVTargetThrustWindingUp; // 0x02F0 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVInterpSpeedThrustWindingUp; // 0x02F8 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVTargetThrustNotWindingUp; // 0x0300 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVInterpSpeedThrustNotWindingUp; // 0x0308 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVTargetIsHovering; // 0x0310 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVInterpSpeedIsHovering; // 0x0318 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVTargetIsNotHovering; // 0x0320 (Size: 0x8, Type: DoubleProperty)
+    double NativeFOVInterpSpeedIsNotHovering; // 0x0328 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentOffsetInterpSpeed; // 0x0330 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentOffsetUpSubtrahend; // 0x0338 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentOffsetForwardVectorMultiplier; // 0x0340 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentOffsetRightVectorMultiplier; // 0x0348 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentOffsetUpVectorMultiplier; // 0x0350 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentOffsetThrustWindingUpInterpRate; // 0x0358 (Size: 0x8, Type: DoubleProperty)
+    double NativeCurrentOffsetNotThrustingInterpRate; // 0x0360 (Size: 0x8, Type: DoubleProperty)
+    double NativeNewViewLocationForwardVectorMultiplier; // 0x0368 (Size: 0x8, Type: DoubleProperty)
+    double NativeNewViewLocationUpVectorMultiplier; // 0x0370 (Size: 0x8, Type: DoubleProperty)
+    double NativePreThrustWindupDuration; // 0x0378 (Size: 0x8, Type: DoubleProperty)
+};
+
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeWindingUpThrustEventTag) == 128, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeWindingUpThrustEventTag");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeStartedThrustingEventTag) == 132, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeStartedThrustingEventTag");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeQuickThrustEventTag) == 136, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeQuickThrustEventTag");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeHoveringTag) == 140, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeHoveringTag");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeRepulsorCannonTag) == 144, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeRepulsorCannonTag");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeBoostingTag) == 148, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeBoostingTag");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeQuickThrustAnchorPercentCurve) == 152, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeQuickThrustAnchorPercentCurve");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeThrustingAnchorPercentCurve) == 160, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeThrustingAnchorPercentCurve");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeLeadInForwardPercentCurve) == 168, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeLeadInForwardPercentCurve");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeLeadInPercentCurveStraightUp) == 176, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeLeadInPercentCurveStraightUp");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeLeadInUpPercentCurve) == 184, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeLeadInUpPercentCurve");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeThrustingLateralAmountCurve) == 192, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeThrustingLateralAmountCurve");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeThurstingForwardAmountCurve) == 200, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeThurstingForwardAmountCurve");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeScreenShakeOffsetVelocityOldRange) == 208, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeScreenShakeOffsetVelocityOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeScreenShakeOffsetAccelerationOldRange) == 224, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeScreenShakeOffsetAccelerationOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentForwardVelocityLengthXYOldRange) == 240, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentForwardVelocityLengthXYOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentForwardVelocityLengthXYNewRange) == 256, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentForwardVelocityLengthXYNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentForwardUpSpeedABSOldRange) == 272, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentForwardUpSpeedABSOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentForwardUpSpeedABSNewRange) == 288, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentForwardUpSpeedABSNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightSpeedOldRange) == 304, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightSpeedOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightSpeedNewRange) == 320, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightSpeedNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightForwardABSOldRange) == 336, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightForwardABSOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightForwardABSNewRange) == 352, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightForwardABSNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpSpeedOldRange) == 368, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpSpeedOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpSpeedNewRange) == 384, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpSpeedNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpForwardABSOldRange) == 400, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpForwardABSOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpForwardABSNewRange) == 416, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpForwardABSNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetSpeedOldRange) == 432, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetSpeedOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetSpeedNewRange) == 448, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetSpeedNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetThrustPercentOldRange) == 464, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetThrustPercentOldRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetThrustPercentNewRange) == 480, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetThrustPercentNewRange");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeLeadInTime) == 496, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeLeadInTime");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeQuickThrustPullBackTime) == 504, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeQuickThrustPullBackTime");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeDivePercentMax) == 512, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeDivePercentMax");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeWindUpHoverTime) == 520, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeWindUpHoverTime");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeInitialHoverXInputThreshold) == 528, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeInitialHoverXInputThreshold");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeScreenShakeOffsetTimeMultiplier) == 536, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeScreenShakeOffsetTimeMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeScreenShakeOffsetThrustingSinMultiplier) == 544, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeScreenShakeOffsetThrustingSinMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeScreenShakeOffsetNonThrustingSinMultiplier) == 552, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeScreenShakeOffsetNonThrustingSinMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentForwardIsHovering) == 560, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentForwardIsHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentForwardIsNotHovering) == 568, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentForwardIsNotHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentForwardIsBoosting) == 576, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentForwardIsBoosting");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightIsHovering) == 584, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightIsHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightIsNotHovering) == 592, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightIsNotHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightIsBoosting) == 600, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightIsBoosting");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightSavedSignIsHovering) == 608, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightSavedSignIsHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentRightSavedSignIsNotHovering) == 616, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentRightSavedSignIsNotHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpIsInLeadIn) == 624, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpIsInLeadIn");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpIsNotInLeadIn) == 632, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpIsNotInLeadIn");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpLowUpSpeed) == 640, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpLowUpSpeed");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpIsHovering) == 648, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpIsHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpIsNotHovering) == 656, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpIsNotHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpIsBoosting) == 664, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpIsBoosting");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentUpIsNotBoosting) == 672, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentUpIsNotBoosting");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCalculatedOffsetInterpSpeedRepulsorCannon) == 680, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCalculatedOffsetInterpSpeedRepulsorCannon");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCalculatedOffsetInterpSpeedIsHovering) == 688, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCalculatedOffsetInterpSpeedIsHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCalculatedOffsetInterpSpeedIsNotHovering) == 696, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCalculatedOffsetInterpSpeedIsNotHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVTargetInInitialHover) == 704, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVTargetInInitialHover");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVInterpSpeedInInitialHover) == 712, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVInterpSpeedInInitialHover");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVTargetNotInInitialHover) == 720, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVTargetNotInInitialHover");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVInterpSpeedNotInInitialHover) == 728, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVInterpSpeedNotInInitialHover");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVTargetRepulsorCannon) == 736, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVTargetRepulsorCannon");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVInterpSpeedRepulsorCannon) == 744, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVInterpSpeedRepulsorCannon");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVTargetThrustWindingUp) == 752, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVTargetThrustWindingUp");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVInterpSpeedThrustWindingUp) == 760, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVInterpSpeedThrustWindingUp");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVTargetThrustNotWindingUp) == 768, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVTargetThrustNotWindingUp");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVInterpSpeedThrustNotWindingUp) == 776, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVInterpSpeedThrustNotWindingUp");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVTargetIsHovering) == 784, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVTargetIsHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVInterpSpeedIsHovering) == 792, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVInterpSpeedIsHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVTargetIsNotHovering) == 800, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVTargetIsNotHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeFOVInterpSpeedIsNotHovering) == 808, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeFOVInterpSpeedIsNotHovering");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetInterpSpeed) == 816, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetInterpSpeed");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetUpSubtrahend) == 824, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetUpSubtrahend");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetForwardVectorMultiplier) == 832, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetForwardVectorMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetRightVectorMultiplier) == 840, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetRightVectorMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetUpVectorMultiplier) == 848, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetUpVectorMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetThrustWindingUpInterpRate) == 856, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetThrustWindingUpInterpRate");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeCurrentOffsetNotThrustingInterpRate) == 864, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeCurrentOffsetNotThrustingInterpRate");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeNewViewLocationForwardVectorMultiplier) == 872, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeNewViewLocationForwardVectorMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativeNewViewLocationUpVectorMultiplier) == 880, "Offset mismatch for UFortCameraModifier_BarnTowel::NativeNewViewLocationUpVectorMultiplier");
+static_assert(offsetof(UFortCameraModifier_BarnTowel, NativePreThrustWindupDuration) == 888, "Offset mismatch for UFortCameraModifier_BarnTowel::NativePreThrustWindupDuration");
+
+// /Script/BarnTowelRuntime.FortGameplayAbility_LaunchBarnTowel
+// Kind: Class; super: FortGameplayAbility_LaunchJetpack
+class UFortGameplayAbility_LaunchBarnTowel
+{
+public:
+    std::uint8_t Pad_0000[0xB20]; // 0x0000
+    std::uint8_t TraceConfig[0x158]; // 0x0B20 (Size: 0x158, Type: StructProperty)
+    std::uint8_t SmashThroughSmallPropsWhileThrusting[0x28]; // 0x0C78 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DestructionTraceDistanceMultiplier[0x28]; // 0x0CA0 (Size: 0x28, Type: StructProperty)
+    double MinTimeBetweenHitThingsGCPlay; // 0x0CC8 (Size: 0x8, Type: DoubleProperty)
+    std::uint8_t HitThingsGCTag[0x4]; // 0x0CD0 (Size: 0x4, Type: StructProperty)
+    std::uint8_t DelayFuelUIEventTag[0x4]; // 0x0CD4 (Size: 0x4, Type: StructProperty)
+    float ResetDestructionFuelCostTime; // 0x0CD8 (Size: 0x4, Type: FloatProperty)
+    std::uint8_t Pad_0001[0x4]; // 0x0CDC
+    void* UseFuelOnHitThingsGEClass; // 0x0CE0 (Size: 0x8, Type: ClassProperty)
+    void* ThrustTelegraphClass; // 0x0CE8 (Size: 0x8, Type: ClassProperty)
+    void* ThrustTelegraphWaterFX; // 0x0CF0 (Size: 0x8, Type: ObjectProperty)
+    TArray<void*> TraceObjectTypes; // 0x0CF8 (Size: 0x10, Type: ArrayProperty)
+    double SpeedThresholdForSlowThrusting; // 0x0D08 (Size: 0x8, Type: DoubleProperty)
+    double TracingStartDeltaDistance; // 0x0D10 (Size: 0x8, Type: DoubleProperty)
+    double TracingEndDeltaDistance; // 0x0D18 (Size: 0x8, Type: DoubleProperty)
+    std::uint8_t Pad_0002[0x60]; // 0x0D20
+    void* TelegraphWaterNS; // 0x0D80 (Size: 0x8, Type: ObjectProperty)
+    void* TelegraphActor; // 0x0D88 (Size: 0x8, Type: ObjectProperty)
+    TArray<void*> NativeDestructionTraceIgnoredActors; // 0x0D90 (Size: 0x10, Type: ArrayProperty)
+    TArray<void*> NativeDestructionTraceCameraIgnoredActors; // 0x0DA0 (Size: 0x10, Type: ArrayProperty)
+    std::uint8_t NativeCurrentLaunchState; // 0x0DB0 (Size: 0x1, Type: EnumProperty)
+};
+
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, TraceConfig) == 2848, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::TraceConfig");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, SmashThroughSmallPropsWhileThrusting) == 3192, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::SmashThroughSmallPropsWhileThrusting");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, DestructionTraceDistanceMultiplier) == 3232, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::DestructionTraceDistanceMultiplier");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, MinTimeBetweenHitThingsGCPlay) == 3272, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::MinTimeBetweenHitThingsGCPlay");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, HitThingsGCTag) == 3280, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::HitThingsGCTag");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, DelayFuelUIEventTag) == 3284, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::DelayFuelUIEventTag");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, ResetDestructionFuelCostTime) == 3288, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::ResetDestructionFuelCostTime");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, UseFuelOnHitThingsGEClass) == 3296, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::UseFuelOnHitThingsGEClass");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, ThrustTelegraphClass) == 3304, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::ThrustTelegraphClass");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, ThrustTelegraphWaterFX) == 3312, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::ThrustTelegraphWaterFX");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, TraceObjectTypes) == 3320, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::TraceObjectTypes");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, SpeedThresholdForSlowThrusting) == 3336, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::SpeedThresholdForSlowThrusting");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, TracingStartDeltaDistance) == 3344, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::TracingStartDeltaDistance");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, TracingEndDeltaDistance) == 3352, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::TracingEndDeltaDistance");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, TelegraphWaterNS) == 3456, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::TelegraphWaterNS");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, TelegraphActor) == 3464, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::TelegraphActor");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, NativeDestructionTraceIgnoredActors) == 3472, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::NativeDestructionTraceIgnoredActors");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, NativeDestructionTraceCameraIgnoredActors) == 3488, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::NativeDestructionTraceCameraIgnoredActors");
+static_assert(offsetof(UFortGameplayAbility_LaunchBarnTowel, NativeCurrentLaunchState) == 3504, "Offset mismatch for UFortGameplayAbility_LaunchBarnTowel::NativeCurrentLaunchState");
+
+// /Script/BarnTowelRuntime.FortMovementMode_BarnTowelFlyingRuntimeData
+// Kind: Class; super: FortMovementMode_JetpackFlyingRuntimeData
+class UFortMovementMode_BarnTowelFlyingRuntimeData
+{
+public:
+    std::uint8_t Pad_0000[0x70]; // 0x0000
+    std::uint8_t FlyingStatus; // 0x0070 (Size: 0x1, Type: EnumProperty)
+    std::uint8_t Pad_0001[0x3]; // 0x0071
+    float CurrentHeightAboveWorld; // 0x0074 (Size: 0x4, Type: FloatProperty)
+    float InterpolatedHeightAboveWorld; // 0x0078 (Size: 0x4, Type: FloatProperty)
+    float SpeedMultiplierFromForwardInput; // 0x007C (Size: 0x4, Type: FloatProperty)
+    float AscendMoveOffset; // 0x0080 (Size: 0x4, Type: FloatProperty)
+    float LoweredAccelerationFromHitSomethingCurrentTime; // 0x0084 (Size: 0x4, Type: FloatProperty)
+    float LastMoveVecLengthWithInput; // 0x0088 (Size: 0x4, Type: FloatProperty)
+    float InterpolatedExtraSpeedFromFlightAngle; // 0x008C (Size: 0x4, Type: FloatProperty)
+    float Boost; // 0x0090 (Size: 0x4, Type: FloatProperty)
+    float BonusBoost; // 0x0094 (Size: 0x4, Type: FloatProperty)
+    std::uint8_t MovementInputWhenLastValid[0x10]; // 0x0098 (Size: 0x10, Type: StructProperty)
+    std::uint8_t MovementVector[0x18]; // 0x00A8 (Size: 0x18, Type: StructProperty)
+    std::uint8_t InterpolatedCurrentNoiseOffset[0x19]; // 0x00C0 (Size: 0x19, Type: StructProperty)
+    std::uint8_t bHasStartedMME; // 0x00D9 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIsStartingFlying; // 0x00DA (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bBoostWasSetThisFrame; // 0x00DB (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIsBoosting; // 0x00DC (Size: 0x1, Type: BoolProperty)
+};
+
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, FlyingStatus) == 112, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::FlyingStatus");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, CurrentHeightAboveWorld) == 116, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::CurrentHeightAboveWorld");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, InterpolatedHeightAboveWorld) == 120, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::InterpolatedHeightAboveWorld");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, SpeedMultiplierFromForwardInput) == 124, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::SpeedMultiplierFromForwardInput");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, AscendMoveOffset) == 128, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::AscendMoveOffset");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, LoweredAccelerationFromHitSomethingCurrentTime) == 132, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::LoweredAccelerationFromHitSomethingCurrentTime");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, LastMoveVecLengthWithInput) == 136, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::LastMoveVecLengthWithInput");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, InterpolatedExtraSpeedFromFlightAngle) == 140, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::InterpolatedExtraSpeedFromFlightAngle");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, Boost) == 144, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::Boost");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, BonusBoost) == 148, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::BonusBoost");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, MovementInputWhenLastValid) == 152, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::MovementInputWhenLastValid");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, MovementVector) == 168, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::MovementVector");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, InterpolatedCurrentNoiseOffset) == 192, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::InterpolatedCurrentNoiseOffset");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, bHasStartedMME) == 217, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::bHasStartedMME");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, bIsStartingFlying) == 218, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::bIsStartingFlying");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, bBoostWasSetThisFrame) == 219, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::bBoostWasSetThisFrame");
+static_assert(offsetof(UFortMovementMode_BarnTowelFlyingRuntimeData, bIsBoosting) == 220, "Offset mismatch for UFortMovementMode_BarnTowelFlyingRuntimeData::bIsBoosting");
+
+// /Script/BarnTowelRuntime.FortMovementMode_ExtLogicFlyingBarnTowel
+// Kind: Class; super: FortMovementMode_ExtLogicFlyingJetpack
+class UFortMovementMode_ExtLogicFlyingBarnTowel
+{
+public:
+    std::uint8_t Pad_0000[0x1D8]; // 0x0000
+    std::uint8_t bIntendsToDescend; // 0x01D8 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIntendsToFly; // 0x01D9 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIntendsToAscend; // 0x01DA (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIntendsToHover; // 0x01DB (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIntendsToWindUp; // 0x01DC (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIntendsToThrust; // 0x01DD (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIntendsToRollLeft; // 0x01DE (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bIntendsToRollRight; // 0x01DF (Size: 0x1, Type: BoolProperty)
+    std::uint8_t TagQueryToFly[0x48]; // 0x01E0 (Size: 0x48, Type: StructProperty)
+    TArray<void*> FlyingStatusConfigs; // 0x0228 (Size: 0x10, Type: ArrayProperty)
+    void* FlyingThroughCeilingGE; // 0x0238 (Size: 0x8, Type: ClassProperty)
+    void* LowFrictionLandingGE; // 0x0240 (Size: 0x8, Type: ClassProperty)
+    void* FuelUsageRateGE; // 0x0248 (Size: 0x8, Type: ClassProperty)
+    void* SmashingGE; // 0x0250 (Size: 0x8, Type: ClassProperty)
+    std::uint8_t FlyingThroughCeilingTag[0x4]; // 0x0258 (Size: 0x4, Type: StructProperty)
+    std::uint8_t EnergyDrainCueTag[0x4]; // 0x025C (Size: 0x4, Type: StructProperty)
+    std::uint8_t HitBonkCueTag[0x4]; // 0x0260 (Size: 0x4, Type: StructProperty)
+    std::uint8_t EventTagToTriggerCrashImpact[0x4]; // 0x0264 (Size: 0x4, Type: StructProperty)
+    std::uint8_t ForceCrashDamagedTags[0x20]; // 0x0268 (Size: 0x20, Type: StructProperty)
+    std::uint8_t TagsToPreventLowFrictionLanding[0x20]; // 0x0288 (Size: 0x20, Type: StructProperty)
+    std::uint8_t SmashingThingsTags[0x20]; // 0x02A8 (Size: 0x20, Type: StructProperty)
+    std::uint8_t HitResponseCrashImpactTags[0x20]; // 0x02C8 (Size: 0x20, Type: StructProperty)
+    std::uint8_t TagToSetByCallerDuration[0x4]; // 0x02E8 (Size: 0x4, Type: StructProperty)
+    std::uint8_t TagUsageRateSetByCallerMagnitude[0x4]; // 0x02EC (Size: 0x4, Type: StructProperty)
+    std::uint8_t IsInChargingStateRepulsorCannonTag[0x4]; // 0x02F0 (Size: 0x4, Type: StructProperty)
+    std::uint8_t RepulsorCannonTag[0x4]; // 0x02F4 (Size: 0x4, Type: StructProperty)
+    std::uint8_t JetpackInteriorTag[0x4]; // 0x02F8 (Size: 0x4, Type: StructProperty)
+    std::uint8_t InstantThrustEventTag[0x4]; // 0x02FC (Size: 0x4, Type: StructProperty)
+    void* NativeDodgeSpeedCurve; // 0x0300 (Size: 0x8, Type: ObjectProperty)
+    void* NativeDodgeSpeedHoveringCurve; // 0x0308 (Size: 0x8, Type: ObjectProperty)
+    std::uint8_t DodgeSpeedMin[0x28]; // 0x0310 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DodgeSpeedMax[0x28]; // 0x0338 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DodgeSpeedDecayInitialDelay[0x28]; // 0x0360 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DodgeSpeedRampExponent[0x28]; // 0x0388 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DodgeSpeedDecayExponent[0x28]; // 0x03B0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DodgeDuration[0x28]; // 0x03D8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t StartedFlyingTransitionDuration[0x28]; // 0x0400 (Size: 0x28, Type: StructProperty)
+    std::uint8_t StartedFlyingSpeedBoundForInterpMin[0x28]; // 0x0428 (Size: 0x28, Type: StructProperty)
+    std::uint8_t StartedFlyingSpeedBoundForInterpMax[0x28]; // 0x0450 (Size: 0x28, Type: StructProperty)
+    std::uint8_t StartedFlyingVelocityInterpSpeedAtMinSpeed[0x28]; // 0x0478 (Size: 0x28, Type: StructProperty)
+    std::uint8_t StartedFlyingVelocityInterpSpeedAtMaxSpeed[0x28]; // 0x04A0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FlyingLookPitchClampMin[0x28]; // 0x04C8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FlyingLookPitchClampMax[0x28]; // 0x04F0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DefaultLookPitchAngleOffset[0x28]; // 0x0518 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingLookPitchClampMin[0x28]; // 0x0540 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingLookPitchClampMax[0x28]; // 0x0568 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingInputWeightLookDirection[0x28]; // 0x0590 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FlyingInputWeightLockDirection[0x28]; // 0x05B8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FlyingInputWeightHorizontal[0x28]; // 0x05E0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PitchInterpSpeedWhileThrusting[0x28]; // 0x0608 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PitchInterpSpeedAtBaseSpeed[0x28]; // 0x0630 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PitchInterpSpeedAtMaxLateralSpeed[0x28]; // 0x0658 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PitchInterpSpeedAtMaxTotalSpeed[0x28]; // 0x0680 (Size: 0x28, Type: StructProperty)
+    std::uint8_t YawInterpSpeedWhileThrusting[0x28]; // 0x06A8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t YawInterpSpeedWhileBoosting[0x28]; // 0x06D0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t YawInterpSpeedAtMinBrakeSpeed[0x28]; // 0x06F8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t YawInterpSpeedAtBaseSpeed[0x28]; // 0x0720 (Size: 0x28, Type: StructProperty)
+    std::uint8_t YawInterpSpeedAtMaxLateralSpeed[0x28]; // 0x0748 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InputInterpSpeedHorizontal[0x28]; // 0x0770 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingMovementInterpSpeed[0x28]; // 0x0798 (Size: 0x28, Type: StructProperty)
+    std::uint8_t MoveInputActiveThreshold[0x28]; // 0x07C0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t AscendingLookPitchClampMin[0x28]; // 0x07E8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightIncreaseSpeedWhileAscendingMin[0x28]; // 0x0810 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightIncreaseSpeedWhileAscendingMax[0x28]; // 0x0838 (Size: 0x28, Type: StructProperty)
+    std::uint8_t MaxCeilingHeightAddLimitFromAscend[0x28]; // 0x0860 (Size: 0x28, Type: StructProperty)
+    std::uint8_t AscendingSpeedZUpAddedMin[0x28]; // 0x0888 (Size: 0x28, Type: StructProperty)
+    std::uint8_t AscendingSpeedZUpAddedMax[0x28]; // 0x08B0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t MaxCeilingHeightAddLimitFromBoost[0x28]; // 0x08D8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightIncreaseSpeedWhileBoostingMin[0x28]; // 0x0900 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightIncreaseSpeedWhileBoostingMax[0x28]; // 0x0928 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PercentMaxLookPitchForMaxBoostCeilingHeightIncrease[0x28]; // 0x0950 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PreThrustWindUpDuration[0x28]; // 0x0978 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingSpeedBase[0x28]; // 0x09A0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingSpeedAddedAtMaxDistanceFromCeilingHeight[0x28]; // 0x09C8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DistanceFromCeilingHeightForMaxCrashingSpeedAdded[0x28]; // 0x09F0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingLookPitchClampFinalMax[0x28]; // 0x0A18 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingLookPitchClampDelayBeforeLerpToFinalMax[0x28]; // 0x0A40 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashingLookPitchClampDurationToLerpToFinalMax[0x28]; // 0x0A68 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PreCrashingSpeedBase[0x28]; // 0x0A90 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PreCrashingInterpToSpeedMod[0x28]; // 0x0AB8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t MinAngleToPreventCrash[0x28]; // 0x0AE0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CrashImpactIgnoreWaterDuration[0x28]; // 0x0B08 (Size: 0x28, Type: StructProperty)
+    std::uint8_t MaxAngleForLowFrictionLanding[0x28]; // 0x0B30 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowFrictionDurationMin[0x28]; // 0x0B58 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowFrictionDurationMax[0x28]; // 0x0B80 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowFrictionDurationScalar[0x28]; // 0x0BA8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t SpeedForMinLowFrictionMult[0x28]; // 0x0BD0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t SpeedForMaxLowFrictionMult[0x28]; // 0x0BF8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowFrictionMultFromSpeedMin[0x28]; // 0x0C20 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowFrictionMultFromSpeedMax[0x28]; // 0x0C48 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ImpactAngleForMaxLowFrictionDuration[0x28]; // 0x0C70 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ImpactAngleForMinLowFrictionDuration[0x28]; // 0x0C98 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowFrictionMultFromImpactAngleMax[0x28]; // 0x0CC0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowFrictionMultFromImpactAngleMin[0x28]; // 0x0CE8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FlyingSpeedBase[0x28]; // 0x0D10 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FlyingSpeedAddedAtMaxDistanceFromCeilingHeight[0x28]; // 0x0D38 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FlyingDownZSpeedAddedWhileFalling[0x28]; // 0x0D60 (Size: 0x28, Type: StructProperty)
+    std::uint8_t DistanceFromCeilingHeightForMaxFlyingSpeedAdded[0x28]; // 0x0D88 (Size: 0x28, Type: StructProperty)
+    std::uint8_t AirBrakingDefaultMultiMin[0x28]; // 0x0DB0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t AirBrakingDownSpeedMultiMin[0x28]; // 0x0DD8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PercentMaxCeilingHeightToAddFromDefaultForwardFlyingInput[0x28]; // 0x0E00 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightIncreaseSpeedWhileHoldingForwardMin[0x28]; // 0x0E28 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightIncreaseSpeedWhileHoldingForwardMax[0x28]; // 0x0E50 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightDecreaseSpeedWhileFlyingAsPctDistanceFromMaxHeight[0x28]; // 0x0E78 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightMinDecreaseSpeedWhileFlying[0x28]; // 0x0EA0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightMinDecreaseSpeedWhileBoosting[0x28]; // 0x0EC8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightDecreaseSpeedWhileBoostingAsPctDistanceFromMaxHeight[0x28]; // 0x0EF0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightMinDecreaseSpeedWhileAscending[0x28]; // 0x0F18 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CeilingHeightDecreaseSpeedWhileAscendingAsPctDistanceFromMaxHeight[0x28]; // 0x0F40 (Size: 0x28, Type: StructProperty)
+    std::uint8_t HeightAboveWorldInterpSpeedIncreasing[0x28]; // 0x0F68 (Size: 0x28, Type: StructProperty)
+    std::uint8_t HeightAboveWorldInterpSpeedDecreasing[0x28]; // 0x0F90 (Size: 0x28, Type: StructProperty)
+    std::uint8_t HeightForMinAddedCeilingDecay[0x28]; // 0x0FB8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t HeightForMaxAddedCeilingDecay[0x28]; // 0x0FE0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t MaxAddedCeilingDecayFromHeight[0x28]; // 0x1008 (Size: 0x28, Type: StructProperty)
+    std::uint8_t GlobalCeilingHeightMax[0x28]; // 0x1030 (Size: 0x28, Type: StructProperty)
+    std::uint8_t GlobalCeilingHeightDiminishingReturnsExponent[0x28]; // 0x1058 (Size: 0x28, Type: StructProperty)
+    std::uint8_t GlobalCeilingHeightDiminishingReturnsRange[0x28]; // 0x1080 (Size: 0x28, Type: StructProperty)
+    std::uint8_t SkimmingMinRequiredAngleToSurface[0x28]; // 0x10A8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t SkimmingMinRequiredVelocityAlongSurface[0x28]; // 0x10D0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t SkimmingMinRequiredHeightAboveWorld[0x28]; // 0x10F8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t MaxAngleForGroundHit[0x28]; // 0x1120 (Size: 0x28, Type: StructProperty)
+    std::uint8_t VelocityClampOnBonk[0x28]; // 0x1148 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InputMultiplierOnRotationMovementInputMax[0x28]; // 0x1170 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InputMultiplierOnRotationNotHoveringFactor[0x28]; // 0x1198 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InputMultiplierOnRotationChargingStateMultiplier[0x28]; // 0x11C0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NativeInitialHoverTime[0x28]; // 0x11E8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PitchTurnSpeedMultiplier[0x28]; // 0x1210 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NewOrientationYawInterpSpeedMultiplier[0x28]; // 0x1238 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NativeLoweredAccelerationFromHitSomethingMaxTime[0x28]; // 0x1260 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorAscendOffsetInterpSpeed[0x28]; // 0x1288 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLengthOldRangeX[0x28]; // 0x12B0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLengthOldRangeY[0x28]; // 0x12D8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLengthNewRangeX[0x28]; // 0x1300 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLengthNewRangeY[0x28]; // 0x1328 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorInputBackwardsThreshold[0x28]; // 0x1350 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorClampedMin[0x28]; // 0x1378 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorClampedMaxHovering[0x28]; // 0x13A0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorClampedMaxNotHovering[0x28]; // 0x13C8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLastLengthWithInputDeltaTimeMultiplier[0x28]; // 0x13F0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLastLengthWithInputClampMin[0x28]; // 0x1418 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLastLengthWithInputClampMax[0x28]; // 0x1440 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorHoveringTimeThreshold[0x28]; // 0x1468 (Size: 0x28, Type: StructProperty)
+    std::uint8_t UpdateMovementVectorLastLengthHoveringMultiplier[0x28]; // 0x1490 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NoiseOffsetInterpSpeed[0x28]; // 0x14B8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t RotateMeshInitialHoverBuffer[0x28]; // 0x14E0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExtraSpeedFromFlightAngleTargetMultiplerUp[0x28]; // 0x1508 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExtraSpeedFromFlightAngleTargetMultiplerDown[0x28]; // 0x1530 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExtraSpeedFromFlightAngleInterpSpeedOldRangeX[0x28]; // 0x1558 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExtraSpeedFromFlightAngleInterpSpeedOldRangeY[0x28]; // 0x1580 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExtraSpeedFromFlightAngleInterpSpeedNewRangeX[0x28]; // 0x15A8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExtraSpeedFromFlightAngleInterpSpeedNewRangeY[0x28]; // 0x15D0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t BreakingVelocityInterpSpeed[0x28]; // 0x15F8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t BoostReductionLastFinialVelocityLengthThreshold[0x28]; // 0x1620 (Size: 0x28, Type: StructProperty)
+    std::uint8_t BoostReductionValue[0x28]; // 0x1648 (Size: 0x28, Type: StructProperty)
+    std::uint8_t RepulsorCannonBoost[0x28]; // 0x1670 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NativeBoostDepletionRate[0x28]; // 0x1698 (Size: 0x28, Type: StructProperty)
+    std::uint8_t BonusBoostDepletionRate[0x28]; // 0x16C0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t BonusBoostUnNormalizedMax[0x28]; // 0x16E8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NativeBoostMaxSpeedIncrease[0x28]; // 0x1710 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExitHoverBoost[0x28]; // 0x1738 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LowerAccelerationFromHitPostProcessMovementVectorWeight[0x28]; // 0x1760 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementBelowHoveringFlyingDurationNewRangeX[0x28]; // 0x1788 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementBelowHoveringFlyingDurationNewRangeY[0x28]; // 0x17B0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementBelowHoveringNewVelocityInterpTargetMaxSize[0x28]; // 0x17D8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementBelowHoveringNewVelocityInterpSpeed[0x28]; // 0x1800 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringTransitionDurationModifier[0x28]; // 0x1828 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringFlyingDurationUpNewRangeX[0x28]; // 0x1850 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringFlyingDurationUpNewRangeY[0x28]; // 0x1878 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringFlyingDurationThreshold[0x28]; // 0x18A0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringLowDurationInterpSpeedOldRangeX[0x28]; // 0x18C8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringLowDurationInterpSpeedOldRangeY[0x28]; // 0x18F0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringLowDurationInterpSpeedNewRangeX[0x28]; // 0x1918 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringLowDurationInterpSpeedNewRangeY[0x28]; // 0x1940 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringHighDurationInterpSpeedOldRangeX[0x28]; // 0x1968 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringHighDurationInterpSpeedOldRangeY[0x28]; // 0x1990 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringHighDurationInterpSpeedNewRangeX[0x28]; // 0x19B8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementAboveHoveringHighDurationInterpSpeedNewRangeY[0x28]; // 0x19E0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementInitialHoverTimeMinModifier[0x28]; // 0x1A08 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementInitialHoverTimeMaxModifier[0x28]; // 0x1A30 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementBoost[0x28]; // 0x1A58 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementInitialHoverTimeMultipler[0x28]; // 0x1A80 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementStartedFlyingTransitionDurationSubtrahend[0x28]; // 0x1AA8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementVelocityMultiplierFlyingDurationNewRangeX[0x28]; // 0x1AD0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LaunchingMovementVelocityMultiplierFlyingDurationNewRangeY[0x28]; // 0x1AF8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NewCrashingModeThrustingDurationThreshold[0x28]; // 0x1B20 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NewCrashingModePreCrashWindUpDurationModifier[0x28]; // 0x1B48 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NewCrashingModeBoost[0x28]; // 0x1B70 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NewCrashingModeRemapTimeCrashingOldRangeX[0x28]; // 0x1B98 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NewCrashingModeRemapTimeCrashingOldRangeY[0x28]; // 0x1BC0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t NewCrashingModeTimeCrashingDownVectorZ[0x28]; // 0x1BE8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateGoalYawMovementInputThreshold[0x28]; // 0x1C10 (Size: 0x28, Type: StructProperty)
+    std::uint8_t EnterHoverMovementVectorThreshold[0x28]; // 0x1C38 (Size: 0x28, Type: StructProperty)
+    std::uint8_t EnterHoverMovementInputXThreshold[0x28]; // 0x1C60 (Size: 0x28, Type: StructProperty)
+    std::uint8_t EnterHoverMovementInputXBackwardThreshold[0x28]; // 0x1C88 (Size: 0x28, Type: StructProperty)
+    std::uint8_t EnterHoverCameraRelativeMovementVectorXThreshold[0x28]; // 0x1CB0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t EnterHoverMovementInputLengthThreshold[0x28]; // 0x1CD8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t EnterHoverInputAgreementWithMovementThreshold[0x28]; // 0x1D00 (Size: 0x28, Type: StructProperty)
+    std::uint8_t EnterHoverLoweredAccelerationFromHitSomethingCurrentTimeThreshold[0x28]; // 0x1D28 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExitHoverMovementInputXBackwardThreshold[0x28]; // 0x1D50 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExitHoverABSMovementInputYThreshold[0x28]; // 0x1D78 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExitHoverMovementVectorLengthThreshold[0x28]; // 0x1DA0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExitHoverMovementInputXThreshold[0x28]; // 0x1DC8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExitHoverCameraRelativeMovementVectorXThreshold[0x28]; // 0x1DF0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ExitHoverInputAgreementWithMovementThreshold[0x28]; // 0x1E18 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseFlyingTimeMultiplierOldRangeX[0x28]; // 0x1E40 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseFlyingTimeMultiplierOldRangeY[0x28]; // 0x1E68 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseFlyingTimeMultiplierNewRangeX[0x28]; // 0x1E90 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseFlyingTimeMultiplierNewRangeY[0x28]; // 0x1EB8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseDotResultMultiplerOldRangeX[0x28]; // 0x1EE0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseDotResultMultiplerOldRangeY[0x28]; // 0x1F08 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseDotResultMultiplerNewRangeX[0x28]; // 0x1F30 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseDotResultMultiplerNewRangeY[0x28]; // 0x1F58 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseMovementVectorLengthMultiplierOldRangeX[0x28]; // 0x1F80 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseMovementVectorLengthMultiplierOldRangeY[0x28]; // 0x1FA8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseMovementVectorLengthMultiplierNewRangeX[0x28]; // 0x1FD0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculatePitchNoiseMovementVectorLengthMultiplierNewRangeY[0x28]; // 0x1FF8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMoveOrientationYawOldRangeX[0x28]; // 0x2020 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMoveOrientationYawOldRangeY[0x28]; // 0x2048 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMoveOrientationYawNewRangeX[0x28]; // 0x2070 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMoveOrientationYawNewRangeY[0x28]; // 0x2098 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMovementVectorLengthOldRangeX[0x28]; // 0x20C0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMovementVectorLengthOldRangeY[0x28]; // 0x20E8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMovementVectorLengthNewRangeX[0x28]; // 0x2110 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseMovementVectorLengthNewRangeY[0x28]; // 0x2138 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateYawNoiseFlyingTimeMultiplier[0x28]; // 0x2160 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationReturnValueWhenThrusting[0x28]; // 0x2188 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationReturnValueWhenHovering[0x28]; // 0x21B0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationMovementVectorLengthOldRangeX[0x28]; // 0x21D8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationMovementVectorLengthOldRangeY[0x28]; // 0x2200 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationMovementVectorLengthNewRangeX[0x28]; // 0x2228 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationMovementVectorLengthNewRangeY[0x28]; // 0x2250 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationHitSomethingTimeOldRangeX[0x28]; // 0x2278 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationHitSomethingTimeNewRangeX[0x28]; // 0x22A0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t CalculateAccelerationHitSomethingTimeNewRangeY[0x28]; // 0x22C8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ClampToMaxHeightCeilingHeightMaxModifier[0x28]; // 0x22F0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ClampToMaxHeightPawnLocationZNewRangeX[0x28]; // 0x2318 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ClampToMaxHeightPawnLocationZNewRangeY[0x28]; // 0x2340 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ClampToMaxHeightAboveWorldNewRangeX[0x28]; // 0x2368 (Size: 0x28, Type: StructProperty)
+    std::uint8_t ClampToMaxHeightAboveWorldNewRangeY[0x28]; // 0x2390 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PostProcessMovementVectorStartedFlyingTimeModifier[0x28]; // 0x23B8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PostProcessMovementVectorTotalFlyingTimeNewRangeX[0x28]; // 0x23E0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PostProcessMovementVectorTotalFlyingTimeNewRangeY[0x28]; // 0x2408 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PostProcessMovementVectorCurrentNoiseOffsetMultiplier[0x28]; // 0x2430 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PostProcessMovementVectorClampedLengthNewRangeX[0x28]; // 0x2458 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PostProcessMovementVectorClampedLengthNewRangeY[0x28]; // 0x2480 (Size: 0x28, Type: StructProperty)
+    std::uint8_t HitResponseIsInInitialHoverBufferTime[0x28]; // 0x24A8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t HitResponseMovementVectorMultiplier[0x28]; // 0x24D0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t LoweredAccelerationFromHitSomethingMaxTime[0x28]; // 0x24F8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FuelUsageRateUpdateInterval[0x28]; // 0x2520 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FuelUsageRateMagnitudeOldRangeX[0x28]; // 0x2548 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FuelUsageRateMagnitudeOldRangeY[0x28]; // 0x2570 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FuelUsageRateMagnitudeNewRangeX[0x28]; // 0x2598 (Size: 0x28, Type: StructProperty)
+    std::uint8_t FuelUsageRateMagnitudeNewRangeY[0x28]; // 0x25C0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t PlayHitFXMovementVectorLengthThreshold[0x28]; // 0x25E8 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InitialHoverTargetTimeMultipler[0x28]; // 0x2610 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InitialHoverTargetXYCalculationNewRangeY[0x28]; // 0x2638 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InstantThrustBoost[0x28]; // 0x2660 (Size: 0x28, Type: StructProperty)
+    std::uint8_t InstantThrustBonusBoost[0x28]; // 0x2688 (Size: 0x28, Type: StructProperty)
+    std::uint8_t OutOfFuelCrashImpactMinSpeed[0x1]; // 0x26B0 (Size: 0x1, Type: StructProperty)
+};
+
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToDescend) == 472, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToDescend");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToFly) == 473, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToFly");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToAscend) == 474, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToAscend");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToHover) == 475, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToHover");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToWindUp) == 476, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToWindUp");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToThrust) == 477, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToThrust");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToRollLeft) == 478, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToRollLeft");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, bIntendsToRollRight) == 479, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::bIntendsToRollRight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, TagQueryToFly) == 480, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::TagQueryToFly");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingStatusConfigs) == 552, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingStatusConfigs");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingThroughCeilingGE) == 568, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingThroughCeilingGE");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionLandingGE) == 576, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionLandingGE");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FuelUsageRateGE) == 584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FuelUsageRateGE");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, SmashingGE) == 592, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::SmashingGE");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingThroughCeilingTag) == 600, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingThroughCeilingTag");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnergyDrainCueTag) == 604, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnergyDrainCueTag");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HitBonkCueTag) == 608, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HitBonkCueTag");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EventTagToTriggerCrashImpact) == 612, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EventTagToTriggerCrashImpact");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ForceCrashDamagedTags) == 616, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ForceCrashDamagedTags");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, TagsToPreventLowFrictionLanding) == 648, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::TagsToPreventLowFrictionLanding");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, SmashingThingsTags) == 680, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::SmashingThingsTags");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HitResponseCrashImpactTags) == 712, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HitResponseCrashImpactTags");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, TagToSetByCallerDuration) == 744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::TagToSetByCallerDuration");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, TagUsageRateSetByCallerMagnitude) == 748, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::TagUsageRateSetByCallerMagnitude");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, IsInChargingStateRepulsorCannonTag) == 752, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::IsInChargingStateRepulsorCannonTag");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, RepulsorCannonTag) == 756, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::RepulsorCannonTag");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, JetpackInteriorTag) == 760, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::JetpackInteriorTag");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InstantThrustEventTag) == 764, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InstantThrustEventTag");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NativeDodgeSpeedCurve) == 768, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NativeDodgeSpeedCurve");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NativeDodgeSpeedHoveringCurve) == 776, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NativeDodgeSpeedHoveringCurve");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DodgeSpeedMin) == 784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DodgeSpeedMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DodgeSpeedMax) == 824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DodgeSpeedMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DodgeSpeedDecayInitialDelay) == 864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DodgeSpeedDecayInitialDelay");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DodgeSpeedRampExponent) == 904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DodgeSpeedRampExponent");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DodgeSpeedDecayExponent) == 944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DodgeSpeedDecayExponent");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DodgeDuration) == 984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DodgeDuration");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, StartedFlyingTransitionDuration) == 1024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::StartedFlyingTransitionDuration");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, StartedFlyingSpeedBoundForInterpMin) == 1064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::StartedFlyingSpeedBoundForInterpMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, StartedFlyingSpeedBoundForInterpMax) == 1104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::StartedFlyingSpeedBoundForInterpMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, StartedFlyingVelocityInterpSpeedAtMinSpeed) == 1144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::StartedFlyingVelocityInterpSpeedAtMinSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, StartedFlyingVelocityInterpSpeedAtMaxSpeed) == 1184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::StartedFlyingVelocityInterpSpeedAtMaxSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingLookPitchClampMin) == 1224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingLookPitchClampMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingLookPitchClampMax) == 1264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingLookPitchClampMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DefaultLookPitchAngleOffset) == 1304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DefaultLookPitchAngleOffset");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingLookPitchClampMin) == 1344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingLookPitchClampMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingLookPitchClampMax) == 1384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingLookPitchClampMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingInputWeightLookDirection) == 1424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingInputWeightLookDirection");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingInputWeightLockDirection) == 1464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingInputWeightLockDirection");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingInputWeightHorizontal) == 1504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingInputWeightHorizontal");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PitchInterpSpeedWhileThrusting) == 1544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PitchInterpSpeedWhileThrusting");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PitchInterpSpeedAtBaseSpeed) == 1584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PitchInterpSpeedAtBaseSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PitchInterpSpeedAtMaxLateralSpeed) == 1624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PitchInterpSpeedAtMaxLateralSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PitchInterpSpeedAtMaxTotalSpeed) == 1664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PitchInterpSpeedAtMaxTotalSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, YawInterpSpeedWhileThrusting) == 1704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::YawInterpSpeedWhileThrusting");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, YawInterpSpeedWhileBoosting) == 1744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::YawInterpSpeedWhileBoosting");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, YawInterpSpeedAtMinBrakeSpeed) == 1784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::YawInterpSpeedAtMinBrakeSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, YawInterpSpeedAtBaseSpeed) == 1824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::YawInterpSpeedAtBaseSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, YawInterpSpeedAtMaxLateralSpeed) == 1864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::YawInterpSpeedAtMaxLateralSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InputInterpSpeedHorizontal) == 1904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InputInterpSpeedHorizontal");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingMovementInterpSpeed) == 1944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingMovementInterpSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, MoveInputActiveThreshold) == 1984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::MoveInputActiveThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, AscendingLookPitchClampMin) == 2024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::AscendingLookPitchClampMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightIncreaseSpeedWhileAscendingMin) == 2064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightIncreaseSpeedWhileAscendingMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightIncreaseSpeedWhileAscendingMax) == 2104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightIncreaseSpeedWhileAscendingMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, MaxCeilingHeightAddLimitFromAscend) == 2144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::MaxCeilingHeightAddLimitFromAscend");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, AscendingSpeedZUpAddedMin) == 2184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::AscendingSpeedZUpAddedMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, AscendingSpeedZUpAddedMax) == 2224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::AscendingSpeedZUpAddedMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, MaxCeilingHeightAddLimitFromBoost) == 2264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::MaxCeilingHeightAddLimitFromBoost");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightIncreaseSpeedWhileBoostingMin) == 2304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightIncreaseSpeedWhileBoostingMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightIncreaseSpeedWhileBoostingMax) == 2344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightIncreaseSpeedWhileBoostingMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PercentMaxLookPitchForMaxBoostCeilingHeightIncrease) == 2384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PercentMaxLookPitchForMaxBoostCeilingHeightIncrease");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PreThrustWindUpDuration) == 2424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PreThrustWindUpDuration");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingSpeedBase) == 2464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingSpeedBase");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingSpeedAddedAtMaxDistanceFromCeilingHeight) == 2504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingSpeedAddedAtMaxDistanceFromCeilingHeight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DistanceFromCeilingHeightForMaxCrashingSpeedAdded) == 2544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DistanceFromCeilingHeightForMaxCrashingSpeedAdded");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingLookPitchClampFinalMax) == 2584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingLookPitchClampFinalMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingLookPitchClampDelayBeforeLerpToFinalMax) == 2624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingLookPitchClampDelayBeforeLerpToFinalMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashingLookPitchClampDurationToLerpToFinalMax) == 2664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashingLookPitchClampDurationToLerpToFinalMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PreCrashingSpeedBase) == 2704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PreCrashingSpeedBase");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PreCrashingInterpToSpeedMod) == 2744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PreCrashingInterpToSpeedMod");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, MinAngleToPreventCrash) == 2784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::MinAngleToPreventCrash");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CrashImpactIgnoreWaterDuration) == 2824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CrashImpactIgnoreWaterDuration");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, MaxAngleForLowFrictionLanding) == 2864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::MaxAngleForLowFrictionLanding");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionDurationMin) == 2904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionDurationMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionDurationMax) == 2944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionDurationMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionDurationScalar) == 2984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionDurationScalar");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, SpeedForMinLowFrictionMult) == 3024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::SpeedForMinLowFrictionMult");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, SpeedForMaxLowFrictionMult) == 3064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::SpeedForMaxLowFrictionMult");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionMultFromSpeedMin) == 3104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionMultFromSpeedMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionMultFromSpeedMax) == 3144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionMultFromSpeedMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ImpactAngleForMaxLowFrictionDuration) == 3184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ImpactAngleForMaxLowFrictionDuration");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ImpactAngleForMinLowFrictionDuration) == 3224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ImpactAngleForMinLowFrictionDuration");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionMultFromImpactAngleMax) == 3264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionMultFromImpactAngleMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowFrictionMultFromImpactAngleMin) == 3304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowFrictionMultFromImpactAngleMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingSpeedBase) == 3344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingSpeedBase");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingSpeedAddedAtMaxDistanceFromCeilingHeight) == 3384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingSpeedAddedAtMaxDistanceFromCeilingHeight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FlyingDownZSpeedAddedWhileFalling) == 3424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FlyingDownZSpeedAddedWhileFalling");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, DistanceFromCeilingHeightForMaxFlyingSpeedAdded) == 3464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::DistanceFromCeilingHeightForMaxFlyingSpeedAdded");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, AirBrakingDefaultMultiMin) == 3504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::AirBrakingDefaultMultiMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, AirBrakingDownSpeedMultiMin) == 3544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::AirBrakingDownSpeedMultiMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PercentMaxCeilingHeightToAddFromDefaultForwardFlyingInput) == 3584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PercentMaxCeilingHeightToAddFromDefaultForwardFlyingInput");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightIncreaseSpeedWhileHoldingForwardMin) == 3624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightIncreaseSpeedWhileHoldingForwardMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightIncreaseSpeedWhileHoldingForwardMax) == 3664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightIncreaseSpeedWhileHoldingForwardMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightDecreaseSpeedWhileFlyingAsPctDistanceFromMaxHeight) == 3704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightDecreaseSpeedWhileFlyingAsPctDistanceFromMaxHeight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightMinDecreaseSpeedWhileFlying) == 3744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightMinDecreaseSpeedWhileFlying");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightMinDecreaseSpeedWhileBoosting) == 3784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightMinDecreaseSpeedWhileBoosting");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightDecreaseSpeedWhileBoostingAsPctDistanceFromMaxHeight) == 3824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightDecreaseSpeedWhileBoostingAsPctDistanceFromMaxHeight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightMinDecreaseSpeedWhileAscending) == 3864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightMinDecreaseSpeedWhileAscending");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CeilingHeightDecreaseSpeedWhileAscendingAsPctDistanceFromMaxHeight) == 3904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CeilingHeightDecreaseSpeedWhileAscendingAsPctDistanceFromMaxHeight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HeightAboveWorldInterpSpeedIncreasing) == 3944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HeightAboveWorldInterpSpeedIncreasing");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HeightAboveWorldInterpSpeedDecreasing) == 3984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HeightAboveWorldInterpSpeedDecreasing");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HeightForMinAddedCeilingDecay) == 4024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HeightForMinAddedCeilingDecay");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HeightForMaxAddedCeilingDecay) == 4064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HeightForMaxAddedCeilingDecay");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, MaxAddedCeilingDecayFromHeight) == 4104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::MaxAddedCeilingDecayFromHeight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, GlobalCeilingHeightMax) == 4144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::GlobalCeilingHeightMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, GlobalCeilingHeightDiminishingReturnsExponent) == 4184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::GlobalCeilingHeightDiminishingReturnsExponent");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, GlobalCeilingHeightDiminishingReturnsRange) == 4224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::GlobalCeilingHeightDiminishingReturnsRange");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, SkimmingMinRequiredAngleToSurface) == 4264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::SkimmingMinRequiredAngleToSurface");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, SkimmingMinRequiredVelocityAlongSurface) == 4304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::SkimmingMinRequiredVelocityAlongSurface");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, SkimmingMinRequiredHeightAboveWorld) == 4344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::SkimmingMinRequiredHeightAboveWorld");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, MaxAngleForGroundHit) == 4384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::MaxAngleForGroundHit");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, VelocityClampOnBonk) == 4424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::VelocityClampOnBonk");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InputMultiplierOnRotationMovementInputMax) == 4464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InputMultiplierOnRotationMovementInputMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InputMultiplierOnRotationNotHoveringFactor) == 4504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InputMultiplierOnRotationNotHoveringFactor");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InputMultiplierOnRotationChargingStateMultiplier) == 4544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InputMultiplierOnRotationChargingStateMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NativeInitialHoverTime) == 4584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NativeInitialHoverTime");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PitchTurnSpeedMultiplier) == 4624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PitchTurnSpeedMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NewOrientationYawInterpSpeedMultiplier) == 4664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NewOrientationYawInterpSpeedMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NativeLoweredAccelerationFromHitSomethingMaxTime) == 4704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NativeLoweredAccelerationFromHitSomethingMaxTime");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorAscendOffsetInterpSpeed) == 4744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorAscendOffsetInterpSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLengthOldRangeX) == 4784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLengthOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLengthOldRangeY) == 4824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLengthOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLengthNewRangeX) == 4864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLengthNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLengthNewRangeY) == 4904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLengthNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorInputBackwardsThreshold) == 4944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorInputBackwardsThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorClampedMin) == 4984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorClampedMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorClampedMaxHovering) == 5024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorClampedMaxHovering");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorClampedMaxNotHovering) == 5064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorClampedMaxNotHovering");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLastLengthWithInputDeltaTimeMultiplier) == 5104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLastLengthWithInputDeltaTimeMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLastLengthWithInputClampMin) == 5144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLastLengthWithInputClampMin");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLastLengthWithInputClampMax) == 5184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLastLengthWithInputClampMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorHoveringTimeThreshold) == 5224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorHoveringTimeThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, UpdateMovementVectorLastLengthHoveringMultiplier) == 5264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::UpdateMovementVectorLastLengthHoveringMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NoiseOffsetInterpSpeed) == 5304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NoiseOffsetInterpSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, RotateMeshInitialHoverBuffer) == 5344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::RotateMeshInitialHoverBuffer");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExtraSpeedFromFlightAngleTargetMultiplerUp) == 5384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExtraSpeedFromFlightAngleTargetMultiplerUp");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExtraSpeedFromFlightAngleTargetMultiplerDown) == 5424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExtraSpeedFromFlightAngleTargetMultiplerDown");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExtraSpeedFromFlightAngleInterpSpeedOldRangeX) == 5464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExtraSpeedFromFlightAngleInterpSpeedOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExtraSpeedFromFlightAngleInterpSpeedOldRangeY) == 5504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExtraSpeedFromFlightAngleInterpSpeedOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExtraSpeedFromFlightAngleInterpSpeedNewRangeX) == 5544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExtraSpeedFromFlightAngleInterpSpeedNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExtraSpeedFromFlightAngleInterpSpeedNewRangeY) == 5584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExtraSpeedFromFlightAngleInterpSpeedNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, BreakingVelocityInterpSpeed) == 5624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::BreakingVelocityInterpSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, BoostReductionLastFinialVelocityLengthThreshold) == 5664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::BoostReductionLastFinialVelocityLengthThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, BoostReductionValue) == 5704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::BoostReductionValue");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, RepulsorCannonBoost) == 5744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::RepulsorCannonBoost");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NativeBoostDepletionRate) == 5784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NativeBoostDepletionRate");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, BonusBoostDepletionRate) == 5824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::BonusBoostDepletionRate");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, BonusBoostUnNormalizedMax) == 5864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::BonusBoostUnNormalizedMax");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NativeBoostMaxSpeedIncrease) == 5904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NativeBoostMaxSpeedIncrease");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExitHoverBoost) == 5944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExitHoverBoost");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LowerAccelerationFromHitPostProcessMovementVectorWeight) == 5984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LowerAccelerationFromHitPostProcessMovementVectorWeight");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementBelowHoveringFlyingDurationNewRangeX) == 6024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementBelowHoveringFlyingDurationNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementBelowHoveringFlyingDurationNewRangeY) == 6064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementBelowHoveringFlyingDurationNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementBelowHoveringNewVelocityInterpTargetMaxSize) == 6104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementBelowHoveringNewVelocityInterpTargetMaxSize");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementBelowHoveringNewVelocityInterpSpeed) == 6144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementBelowHoveringNewVelocityInterpSpeed");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringTransitionDurationModifier) == 6184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringTransitionDurationModifier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringFlyingDurationUpNewRangeX) == 6224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringFlyingDurationUpNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringFlyingDurationUpNewRangeY) == 6264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringFlyingDurationUpNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringFlyingDurationThreshold) == 6304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringFlyingDurationThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringLowDurationInterpSpeedOldRangeX) == 6344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringLowDurationInterpSpeedOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringLowDurationInterpSpeedOldRangeY) == 6384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringLowDurationInterpSpeedOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringLowDurationInterpSpeedNewRangeX) == 6424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringLowDurationInterpSpeedNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringLowDurationInterpSpeedNewRangeY) == 6464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringLowDurationInterpSpeedNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringHighDurationInterpSpeedOldRangeX) == 6504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringHighDurationInterpSpeedOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringHighDurationInterpSpeedOldRangeY) == 6544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringHighDurationInterpSpeedOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringHighDurationInterpSpeedNewRangeX) == 6584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringHighDurationInterpSpeedNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementAboveHoveringHighDurationInterpSpeedNewRangeY) == 6624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementAboveHoveringHighDurationInterpSpeedNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementInitialHoverTimeMinModifier) == 6664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementInitialHoverTimeMinModifier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementInitialHoverTimeMaxModifier) == 6704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementInitialHoverTimeMaxModifier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementBoost) == 6744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementBoost");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementInitialHoverTimeMultipler) == 6784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementInitialHoverTimeMultipler");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementStartedFlyingTransitionDurationSubtrahend) == 6824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementStartedFlyingTransitionDurationSubtrahend");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementVelocityMultiplierFlyingDurationNewRangeX) == 6864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementVelocityMultiplierFlyingDurationNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LaunchingMovementVelocityMultiplierFlyingDurationNewRangeY) == 6904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LaunchingMovementVelocityMultiplierFlyingDurationNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NewCrashingModeThrustingDurationThreshold) == 6944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NewCrashingModeThrustingDurationThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NewCrashingModePreCrashWindUpDurationModifier) == 6984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NewCrashingModePreCrashWindUpDurationModifier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NewCrashingModeBoost) == 7024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NewCrashingModeBoost");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NewCrashingModeRemapTimeCrashingOldRangeX) == 7064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NewCrashingModeRemapTimeCrashingOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NewCrashingModeRemapTimeCrashingOldRangeY) == 7104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NewCrashingModeRemapTimeCrashingOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, NewCrashingModeTimeCrashingDownVectorZ) == 7144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::NewCrashingModeTimeCrashingDownVectorZ");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateGoalYawMovementInputThreshold) == 7184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateGoalYawMovementInputThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnterHoverMovementVectorThreshold) == 7224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnterHoverMovementVectorThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnterHoverMovementInputXThreshold) == 7264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnterHoverMovementInputXThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnterHoverMovementInputXBackwardThreshold) == 7304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnterHoverMovementInputXBackwardThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnterHoverCameraRelativeMovementVectorXThreshold) == 7344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnterHoverCameraRelativeMovementVectorXThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnterHoverMovementInputLengthThreshold) == 7384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnterHoverMovementInputLengthThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnterHoverInputAgreementWithMovementThreshold) == 7424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnterHoverInputAgreementWithMovementThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, EnterHoverLoweredAccelerationFromHitSomethingCurrentTimeThreshold) == 7464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::EnterHoverLoweredAccelerationFromHitSomethingCurrentTimeThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExitHoverMovementInputXBackwardThreshold) == 7504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExitHoverMovementInputXBackwardThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExitHoverABSMovementInputYThreshold) == 7544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExitHoverABSMovementInputYThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExitHoverMovementVectorLengthThreshold) == 7584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExitHoverMovementVectorLengthThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExitHoverMovementInputXThreshold) == 7624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExitHoverMovementInputXThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExitHoverCameraRelativeMovementVectorXThreshold) == 7664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExitHoverCameraRelativeMovementVectorXThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ExitHoverInputAgreementWithMovementThreshold) == 7704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ExitHoverInputAgreementWithMovementThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseFlyingTimeMultiplierOldRangeX) == 7744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseFlyingTimeMultiplierOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseFlyingTimeMultiplierOldRangeY) == 7784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseFlyingTimeMultiplierOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseFlyingTimeMultiplierNewRangeX) == 7824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseFlyingTimeMultiplierNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseFlyingTimeMultiplierNewRangeY) == 7864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseFlyingTimeMultiplierNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseDotResultMultiplerOldRangeX) == 7904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseDotResultMultiplerOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseDotResultMultiplerOldRangeY) == 7944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseDotResultMultiplerOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseDotResultMultiplerNewRangeX) == 7984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseDotResultMultiplerNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseDotResultMultiplerNewRangeY) == 8024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseDotResultMultiplerNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseMovementVectorLengthMultiplierOldRangeX) == 8064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseMovementVectorLengthMultiplierOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseMovementVectorLengthMultiplierOldRangeY) == 8104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseMovementVectorLengthMultiplierOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseMovementVectorLengthMultiplierNewRangeX) == 8144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseMovementVectorLengthMultiplierNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculatePitchNoiseMovementVectorLengthMultiplierNewRangeY) == 8184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculatePitchNoiseMovementVectorLengthMultiplierNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMoveOrientationYawOldRangeX) == 8224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMoveOrientationYawOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMoveOrientationYawOldRangeY) == 8264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMoveOrientationYawOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMoveOrientationYawNewRangeX) == 8304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMoveOrientationYawNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMoveOrientationYawNewRangeY) == 8344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMoveOrientationYawNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMovementVectorLengthOldRangeX) == 8384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMovementVectorLengthOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMovementVectorLengthOldRangeY) == 8424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMovementVectorLengthOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMovementVectorLengthNewRangeX) == 8464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMovementVectorLengthNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseMovementVectorLengthNewRangeY) == 8504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseMovementVectorLengthNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateYawNoiseFlyingTimeMultiplier) == 8544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateYawNoiseFlyingTimeMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationReturnValueWhenThrusting) == 8584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationReturnValueWhenThrusting");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationReturnValueWhenHovering) == 8624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationReturnValueWhenHovering");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationMovementVectorLengthOldRangeX) == 8664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationMovementVectorLengthOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationMovementVectorLengthOldRangeY) == 8704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationMovementVectorLengthOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationMovementVectorLengthNewRangeX) == 8744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationMovementVectorLengthNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationMovementVectorLengthNewRangeY) == 8784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationMovementVectorLengthNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationHitSomethingTimeOldRangeX) == 8824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationHitSomethingTimeOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationHitSomethingTimeNewRangeX) == 8864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationHitSomethingTimeNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, CalculateAccelerationHitSomethingTimeNewRangeY) == 8904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::CalculateAccelerationHitSomethingTimeNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ClampToMaxHeightCeilingHeightMaxModifier) == 8944, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ClampToMaxHeightCeilingHeightMaxModifier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ClampToMaxHeightPawnLocationZNewRangeX) == 8984, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ClampToMaxHeightPawnLocationZNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ClampToMaxHeightPawnLocationZNewRangeY) == 9024, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ClampToMaxHeightPawnLocationZNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ClampToMaxHeightAboveWorldNewRangeX) == 9064, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ClampToMaxHeightAboveWorldNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, ClampToMaxHeightAboveWorldNewRangeY) == 9104, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::ClampToMaxHeightAboveWorldNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PostProcessMovementVectorStartedFlyingTimeModifier) == 9144, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PostProcessMovementVectorStartedFlyingTimeModifier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PostProcessMovementVectorTotalFlyingTimeNewRangeX) == 9184, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PostProcessMovementVectorTotalFlyingTimeNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PostProcessMovementVectorTotalFlyingTimeNewRangeY) == 9224, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PostProcessMovementVectorTotalFlyingTimeNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PostProcessMovementVectorCurrentNoiseOffsetMultiplier) == 9264, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PostProcessMovementVectorCurrentNoiseOffsetMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PostProcessMovementVectorClampedLengthNewRangeX) == 9304, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PostProcessMovementVectorClampedLengthNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PostProcessMovementVectorClampedLengthNewRangeY) == 9344, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PostProcessMovementVectorClampedLengthNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HitResponseIsInInitialHoverBufferTime) == 9384, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HitResponseIsInInitialHoverBufferTime");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, HitResponseMovementVectorMultiplier) == 9424, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::HitResponseMovementVectorMultiplier");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, LoweredAccelerationFromHitSomethingMaxTime) == 9464, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::LoweredAccelerationFromHitSomethingMaxTime");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FuelUsageRateUpdateInterval) == 9504, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FuelUsageRateUpdateInterval");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FuelUsageRateMagnitudeOldRangeX) == 9544, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FuelUsageRateMagnitudeOldRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FuelUsageRateMagnitudeOldRangeY) == 9584, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FuelUsageRateMagnitudeOldRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FuelUsageRateMagnitudeNewRangeX) == 9624, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FuelUsageRateMagnitudeNewRangeX");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, FuelUsageRateMagnitudeNewRangeY) == 9664, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::FuelUsageRateMagnitudeNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, PlayHitFXMovementVectorLengthThreshold) == 9704, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::PlayHitFXMovementVectorLengthThreshold");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InitialHoverTargetTimeMultipler) == 9744, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InitialHoverTargetTimeMultipler");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InitialHoverTargetXYCalculationNewRangeY) == 9784, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InitialHoverTargetXYCalculationNewRangeY");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InstantThrustBoost) == 9824, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InstantThrustBoost");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, InstantThrustBonusBoost) == 9864, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::InstantThrustBonusBoost");
+static_assert(offsetof(UFortMovementMode_ExtLogicFlyingBarnTowel, OutOfFuelCrashImpactMinSpeed) == 9904, "Offset mismatch for UFortMovementMode_ExtLogicFlyingBarnTowel::OutOfFuelCrashImpactMinSpeed");
+
+// /Script/BarnTowelRuntime.FortWeaponBarnTowel
+// Kind: Class; super: FortWeaponJetpack
+class UFortWeaponBarnTowel
+{
+public:
+    std::uint8_t Pad_0000[0x19F8]; // 0x0000
+    std::uint8_t FlyingStatus; // 0x19F8 (Size: 0x1, Type: EnumProperty)
+    std::uint8_t Pad_0001[0x3]; // 0x19F9
+    float NativeCurrentHeightAboveWorld; // 0x19FC (Size: 0x4, Type: FloatProperty)
+    float ForwardSpeed; // 0x1A00 (Size: 0x4, Type: FloatProperty)
+    float ForAnimTimeLeftInInitialHover; // 0x1A04 (Size: 0x4, Type: FloatProperty)
+    std::uint8_t ForAnimCurrentNoiseOffset[0x18]; // 0x1A08 (Size: 0x18, Type: StructProperty)
+    std::uint8_t ForAnimMovementGoalDirection[0x18]; // 0x1A20 (Size: 0x18, Type: StructProperty)
+    std::uint8_t ForAnimDodgeVelocity[0x18]; // 0x1A38 (Size: 0x18, Type: StructProperty)
+    std::uint8_t ForAnimMovementInput[0x10]; // 0x1A50 (Size: 0x10, Type: StructProperty)
+    std::uint8_t ForAnimGoalMoveOrientation[0x18]; // 0x1A60 (Size: 0x18, Type: StructProperty)
+    std::uint8_t bForAnimIsStartingFlying; // 0x1A78 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bForAnimIsInInitialHover; // 0x1A79 (Size: 0x1, Type: BoolProperty)
+    std::uint8_t bForAnimIsInInitialHoverWithBuffer; // 0x1A7A (Size: 0x1, Type: BoolProperty)
+    std::uint8_t Pad_0002[0x65]; // 0x1A7B
+    void* FlyingMovementModeExtension; // 0x1AE0 (Size: 0x8, Type: ClassProperty)
+    std::uint8_t TagToEnableHeightCheck[0x8]; // 0x1AE8 (Size: 0x8, Type: StructProperty)
+    std::uint8_t HeightCheckInterval[0x28]; // 0x1AF0 (Size: 0x28, Type: StructProperty)
+    std::uint8_t HeightCheckTraceLength[0x1]; // 0x1B18 (Size: 0x1, Type: StructProperty)
+};
+
+static_assert(offsetof(UFortWeaponBarnTowel, FlyingStatus) == 6648, "Offset mismatch for UFortWeaponBarnTowel::FlyingStatus");
+static_assert(offsetof(UFortWeaponBarnTowel, NativeCurrentHeightAboveWorld) == 6652, "Offset mismatch for UFortWeaponBarnTowel::NativeCurrentHeightAboveWorld");
+static_assert(offsetof(UFortWeaponBarnTowel, ForwardSpeed) == 6656, "Offset mismatch for UFortWeaponBarnTowel::ForwardSpeed");
+static_assert(offsetof(UFortWeaponBarnTowel, ForAnimTimeLeftInInitialHover) == 6660, "Offset mismatch for UFortWeaponBarnTowel::ForAnimTimeLeftInInitialHover");
+static_assert(offsetof(UFortWeaponBarnTowel, ForAnimCurrentNoiseOffset) == 6664, "Offset mismatch for UFortWeaponBarnTowel::ForAnimCurrentNoiseOffset");
+static_assert(offsetof(UFortWeaponBarnTowel, ForAnimMovementGoalDirection) == 6688, "Offset mismatch for UFortWeaponBarnTowel::ForAnimMovementGoalDirection");
+static_assert(offsetof(UFortWeaponBarnTowel, ForAnimDodgeVelocity) == 6712, "Offset mismatch for UFortWeaponBarnTowel::ForAnimDodgeVelocity");
+static_assert(offsetof(UFortWeaponBarnTowel, ForAnimMovementInput) == 6736, "Offset mismatch for UFortWeaponBarnTowel::ForAnimMovementInput");
+static_assert(offsetof(UFortWeaponBarnTowel, ForAnimGoalMoveOrientation) == 6752, "Offset mismatch for UFortWeaponBarnTowel::ForAnimGoalMoveOrientation");
+static_assert(offsetof(UFortWeaponBarnTowel, bForAnimIsStartingFlying) == 6776, "Offset mismatch for UFortWeaponBarnTowel::bForAnimIsStartingFlying");
+static_assert(offsetof(UFortWeaponBarnTowel, bForAnimIsInInitialHover) == 6777, "Offset mismatch for UFortWeaponBarnTowel::bForAnimIsInInitialHover");
+static_assert(offsetof(UFortWeaponBarnTowel, bForAnimIsInInitialHoverWithBuffer) == 6778, "Offset mismatch for UFortWeaponBarnTowel::bForAnimIsInInitialHoverWithBuffer");
+static_assert(offsetof(UFortWeaponBarnTowel, FlyingMovementModeExtension) == 6880, "Offset mismatch for UFortWeaponBarnTowel::FlyingMovementModeExtension");
+static_assert(offsetof(UFortWeaponBarnTowel, TagToEnableHeightCheck) == 6888, "Offset mismatch for UFortWeaponBarnTowel::TagToEnableHeightCheck");
+static_assert(offsetof(UFortWeaponBarnTowel, HeightCheckInterval) == 6896, "Offset mismatch for UFortWeaponBarnTowel::HeightCheckInterval");
+static_assert(offsetof(UFortWeaponBarnTowel, HeightCheckTraceLength) == 6936, "Offset mismatch for UFortWeaponBarnTowel::HeightCheckTraceLength");
