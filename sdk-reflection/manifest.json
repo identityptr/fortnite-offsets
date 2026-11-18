@@ -1,0 +1,9 @@
+{
+  "inventory_sha256": "bd4ad5cf8d2d78ce53870da6061a1fe9eeabb7accaa57c45542a1a376c0f6e42",
+  "functions_sha256": "baf19672a26674d6ac071388d1470c182b4fa7d32dbd4ba1bb61f26a93116fb8",
+  "packages": 1479,
+  "types": 34772,
+  "properties": 191107,
+  "function_names": 29050,
+  "skipped_rows": 78951
+}
