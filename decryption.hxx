@@ -28,13 +28,34 @@ namespace FN::Decryption
     {
         try
         {
-            if (!Kernel::Object || !Kernel::Object->valid() || !FN::O::Engine::UWorld || false)
+            if (!Kernel::Object || !Kernel::Object->valid())
                 return 0;
-            const auto encoded = Kernel::Object->Read<std::uint64_t>(
-                Kernel::Object->Base + FN::O::Engine::UWorld);
-            if (!encoded) return 0;
-            const auto world = static_cast<std::uintptr_t>(byte_swap64(((encoded + 29451222ULL) ^ 0xBA21D51900000000ULL)));
-            return world ? world : 0;
+            if (FN::O::Engine::UWorld)
+            {
+                const auto encoded = Kernel::Object->Read<std::uint64_t>(
+                    Kernel::Object->Base + FN::O::Engine::UWorld);
+                if (encoded)
+                {
+                    const auto world = static_cast<std::uintptr_t>((byte_swap64(encoded) + 0x3F1FCDFBULL));
+                    if (world >= 0x10000 && (world & 7) == 0)
+                        return world;
+                }
+            }
+            if (!FN::O::Engine::GEngine ||
+                !FN::O::Engine::GameViewport ||
+                !FN::O::Engine::ViewportWorld)
+                return 0;
+            const auto engine = Kernel::Object->Read<std::uintptr_t>(
+                Kernel::Object->Base + FN::O::Engine::GEngine);
+            if (!engine)
+                return 0;
+            const auto viewport = Kernel::Object->Read<std::uintptr_t>(
+                engine + FN::O::Engine::GameViewport);
+            if (!viewport)
+                return 0;
+            const auto world = Kernel::Object->Read<std::uintptr_t>(
+                viewport + FN::O::Engine::ViewportWorld);
+            return world >= 0x10000 && (world & 7) == 0 ? world : 0;
         }
         catch (...)
         {
@@ -52,11 +73,11 @@ namespace FN::Decryption
         try
         {
             if (!Kernel::Object || !Kernel::Object->valid() ||
-                !FN::O::Engine::GObjectCount || false)
+                !FN::O::Engine::GObjectCount)
                 return 0;
             const auto encoded = Kernel::Object->Read<std::uint32_t>(
                 Kernel::Object->Base + FN::O::Engine::GObjectCount);
-            return byte_swap32(((encoded + 25098580U) ^ 0xD855C48AU));
+            return (byte_swap32(encoded) + 0x7FD025BCU);
         }
         catch (...)
         {
@@ -69,14 +90,14 @@ namespace FN::Decryption
         try
         {
             if (!Kernel::Object || !Kernel::Object->valid() ||
-                !FN::O::Engine::GObjects || false)
+                !FN::O::Engine::GObjects)
                 return 0;
             const auto count = get_objects_count();
             if (!count || index >= count) return 0;
 
             const auto encoded_table = Kernel::Object->Read<std::uint64_t>(
                 Kernel::Object->Base + FN::O::Engine::GObjects);
-            const auto chunk_table = static_cast<std::uintptr_t>(byte_swap64(((encoded_table + 29451222ULL) ^ 0xCBBE4E5900000000ULL)));
+            const auto chunk_table = static_cast<std::uintptr_t>((byte_swap64(encoded_table) + 0x3AE65B7CULL));
             if (!chunk_table) return 0;
 
             const auto chunk = Kernel::Object->Read<std::uintptr_t>(
@@ -87,10 +108,9 @@ namespace FN::Decryption
             const auto item = chunk +
                 static_cast<std::uintptr_t>(index & 0xFFFFU) * 24U;
             const auto item_flags = Kernel::Object->Read<std::uint64_t>(item);
-            if ((item_flags & 0x1020000000000000ULL) != 0) return 0;
 
-            const auto encoded_low = Kernel::Object->Read<std::uint32_t>(item + 16U);
-            const auto decoded_low = static_cast<std::uint64_t>(byte_swap32(((encoded_low + 25098580U) ^ 0x998EAD26U)));
+            const auto encoded_low = Kernel::Object->Read<std::uint32_t>(item + 8U);
+            const auto decoded_low = static_cast<std::uint64_t>((byte_swap32(encoded_low) + 0x423A753BU));
             const auto upper = item_flags & 0x3FFF00000000ULL;
             return static_cast<std::uintptr_t>((decoded_low | upper) << 3);
         }
@@ -102,42 +122,66 @@ namespace FN::Decryption
 
     inline auto fname(const std::uint32_t encoded) -> std::uint32_t
     {
-        if (!encoded || false) return 0;
-        const auto adjusted = encoded;
-        const auto decoded = (static_cast<std::uint32_t>(byte_swap32(((adjusted + 25098579U) ^ 0x257100C7U))) + 1U);
-        return decoded ? decoded : 0x94F90F25U;
+        if (!encoded) return 0;
+        const auto adjusted = (encoded - 1U);
+        const auto decoded = static_cast<std::uint32_t>((byte_swap32(adjusted) - 0x6903C7EBU));
+        return decoded ? decoded : 0x96FC3814U;
     }
 
-    inline constexpr std::uint32_t fname_blocks_offset = 0x6768U;
-    inline constexpr std::uint32_t fname_length_xor = 0x30DU;
-    inline constexpr std::uint16_t fname_header_mask = 0xFFFFU;
+    inline constexpr std::uint32_t fname_blocks_offset = 0x10U;
+    inline constexpr std::uint32_t fname_length_xor = 0x30CU;
+    inline constexpr std::uint16_t fname_header_mask = 0x3FFU;
     inline constexpr std::uint16_t fname_wide_mask = 0x1U;
-    inline constexpr std::uint8_t fname_header_shift = 6U;
+    inline constexpr std::uint8_t fname_header_shift = 1U;
     inline constexpr std::uint8_t fname_redirect_offset = 6U;
 
     inline constexpr std::uint8_t fname_entry_stride = 2U;
     inline constexpr std::uint8_t fname_suffix_offset = 2U;
 
-    inline constexpr std::uint8_t fname_byte_algorithm = 3U;
-    inline constexpr std::uint32_t fname_mix_multiplier = 0x34B1U;
-    inline constexpr std::uint32_t fname_mix_xor_multiplier = 0x2177U;
-    inline constexpr std::uint32_t fname_mix_additive = 0x78DA7U;
-    inline constexpr std::uint8_t fname_mix_shift = 14U;
-    inline constexpr std::uint8_t fname_seed_shift = 14U;
-    inline constexpr std::uint8_t fname_mix_rotate_left = 14U;
+    inline constexpr std::uint8_t fname_byte_algorithm = 4U;
+    inline constexpr std::uint32_t fname_mix_multiplier = 0x1F4DU;
+    inline constexpr std::uint32_t fname_mix_xor_multiplier = 0x8U;
+    inline constexpr std::uint32_t fname_mix_additive = 0x47A692U;
+    inline constexpr std::uint8_t fname_mix_shift = 11U;
+    inline constexpr std::uint8_t fname_seed_shift = 0U;
+    inline constexpr std::uint8_t fname_mix_rotate_left = 0U;
     inline constexpr std::uint8_t fname_byte_rotate_left = 0U;
-    inline constexpr std::uint8_t fname_byte_additive = 96U;
+    inline constexpr std::uint8_t fname_byte_additive = 1U;
+    inline constexpr std::uint8_t fname_byte_chain_multiplier = 185U;
 
     inline auto decrypt_fname_bytes(std::uint8_t* bytes,
                                     const std::size_t byte_count,
                                     const std::uint32_t length) -> bool
     {
-        if (!bytes || !byte_count || false) return false;
+        if (!bytes || !byte_count) return false;
         const auto linear = [](const std::uint32_t value)
         {
             return fname_mix_multiplier * value + fname_mix_additive;
         };
         const std::vector<std::uint8_t> encrypted(bytes, bytes + byte_count);
+        if constexpr (fname_byte_algorithm == 4U)
+        {
+            const auto advance = [](const std::uint32_t value)
+            {
+                const auto mixed = fname_mix_multiplier * value +
+                                   fname_mix_additive;
+                return mixed ^ (fname_mix_xor_multiplier * value) ^
+                       (mixed >> fname_mix_shift);
+            };
+            auto state = advance(length);
+            auto previous = static_cast<std::uint8_t>(
+                fname_byte_chain_multiplier * state);
+            for (std::size_t index{}; index < byte_count; ++index)
+            {
+                bytes[index] = static_cast<std::uint8_t>(
+                    (previous ^ encrypted[index]) +
+                    static_cast<std::uint8_t>(state) +
+                    fname_byte_additive);
+                previous = encrypted[index];
+                state = advance(state);
+            }
+            return true;
+        }
         if constexpr (fname_byte_algorithm == 3U)
         {
             const auto advance = [](const std::uint32_t value)
@@ -212,48 +256,33 @@ namespace FN::Decryption
 
     inline auto fname_suffix(const std::uint32_t encoded) -> std::int32_t
     {
-        if (false) return -1;
         if (!encoded) return std::bit_cast<std::int32_t>(0xFFFFFFFFU);
-        const auto adjusted = (encoded + 25098579U);
-        if (adjusted == 0xAFFFC7E2U) return std::bit_cast<std::int32_t>(0x4EC17E51U);
-        return std::bit_cast<std::int32_t>(static_cast<std::uint32_t>(byte_swap32((adjusted ^ 0x5000381DU))));
+        const auto adjusted = (encoded - 1U);
+        if (adjusted == 0xA5F795C0U) return std::bit_cast<std::int32_t>(0x3F6A0859U);
+        return std::bit_cast<std::int32_t>(static_cast<std::uint32_t>((byte_swap32(adjusted) + 0x3F6A085AU)));
     }
 
     inline auto decode_internal_index(const std::uint32_t encoded) -> std::uint32_t
     {
-        if (false) return 0;
-        const auto value = static_cast<std::uint32_t>(byte_swap32(((encoded + 25098580U) ^ 0xB9E290D9U)) + 0x0U);
+        const auto value = static_cast<std::uint32_t>((byte_swap32(encoded) - 0x2710126U) + 0x0U);
         return value ? value : 0x0U;
     }
 
     inline auto decode_property_offset(const std::uint32_t encoded) -> std::uint32_t
     {
-        if (!encoded || false) return 0;
-        return byte_swap32(((encoded + 25098580U) ^ 0x1EACEEABU));
+        if (!encoded) return 0;
+        return encoded;
     }
 
     inline auto decode_ffield_pointer(const std::uintptr_t encoded) -> std::uintptr_t
     {
         if (!(encoded & 1U)) return encoded;
-        if (false) return 0;
         const auto masked = encoded & ~std::uintptr_t{1};
-        if constexpr (true)
-        {
-            const auto mixed = (0x5E84B7C5DBB8A361ULL * masked + 0x492FC5868046575CULL) ^ 0xBD79371F81277DC4ULL;
-            const auto permuted =
-                (mixed & 0xFFFFULL) |
-                ((mixed >> 40) & 0x0000000000FF0000ULL) |
-                ((mixed >> 24) & 0x00000000FF000000ULL) |
-                ((mixed >> 8) & 0x000000FF00000000ULL) |
-                ((mixed << 8) & 0x0000FF0000000000ULL) |
-                ((mixed << 24) & 0x00FF000000000000ULL) |
-                ((mixed << 40) & 0xFF00000000000000ULL);
-            return static_cast<std::uintptr_t>(permuted + 0xA689A5E5BD5406BEULL);
-        }
-        const auto product = 0x5E84B7C5DBB8A361ULL * masked;
-        const auto high = std::rotl(static_cast<std::uint32_t>((product ^ 0xBD79371F81277DC4ULL) >> 32), 0);
-        const auto low = ((static_cast<std::uint32_t>(0x5E84B7C5DBB8A361ULL) * static_cast<std::uint32_t>(masked)) ^ static_cast<std::uint32_t>(0xBD79371F81277DC4ULL)) & ~1U;
-        return static_cast<std::uintptr_t>((static_cast<std::uint64_t>(high) << 32 | low) + 0xA689A5E5BD5406BEULL);
+        const auto mixed = (masked + 0x4A3CC6B5BBDD8758ULL) ^ 0x70DD8045EC0D4A3AULL;
+        const auto lanes = ((mixed >> 16) & 0xFF00000000ULL) | ((mixed << 16) & 0xFF000000000000ULL) | (mixed & 0xFF0000000000ULL) | ((mixed << 32) & 0xFF00000000000000ULL);
+        const auto high = std::rotl(static_cast<std::uint32_t>(lanes >> 32), 18);
+        const auto permuted = (mixed & 0xFFFFFEULL) | ((mixed >> 32) & 0xFF000000ULL) | (static_cast<std::uint64_t>(high) << 32);
+        return static_cast<std::uintptr_t>(permuted * 0xA8C93CD45F58157DULL);
     }
 }
 
@@ -339,7 +368,7 @@ namespace FN
             return result;
         }
 
-         auto to_string() const -> std::string
+        [[nodiscard]] auto to_string() const -> std::string
         {
             return resolve(static_cast<std::int32_t>(comparison_index));
         }
@@ -369,8 +398,8 @@ namespace FN
         static constexpr auto encoded_length(const std::uint16_t header)
             -> std::uint32_t
         {
-            return (header & FN::Decryption::fname_header_mask) >>
-                   FN::Decryption::fname_header_shift;
+            return (header >> FN::Decryption::fname_header_shift) &
+                   FN::Decryption::fname_header_mask;
         }
 
         static constexpr auto is_numbered(const std::uint16_t header) -> bool
@@ -384,8 +413,7 @@ namespace FN
             const auto length = encoded_length(header) ^
                                 FN::Decryption::fname_length_xor;
             const auto maximum_length = static_cast<std::uint32_t>(
-                FN::Decryption::fname_header_mask >>
-                FN::Decryption::fname_header_shift);
+                FN::Decryption::fname_header_mask);
             if (!length || length > maximum_length) return {};
             const bool wide = (header & FN::Decryption::fname_wide_mask) != 0;
             const auto byte_count = static_cast<std::size_t>(length) *
@@ -469,7 +497,7 @@ namespace FN
             return resolve(owner + member_offset);
         }
 
-         std::string to_string() const
+        [[nodiscard]] std::string to_string() const
         {
             return resolve(address);
         }
@@ -510,7 +538,7 @@ namespace FN
             return {};
         }
 
-         std::string to_string() const
+        [[nodiscard]] std::string to_string() const
         {
             return from_data(text_data);
         }
